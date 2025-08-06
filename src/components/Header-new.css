@@ -17,10 +17,12 @@
   gap: 1rem;
 }
 
-.logo h1 {
-  color: var(--text-primary);
-  font-size: 1.8rem;
-  font-weight: 700;
+.logo {
+  height: 50px;
+}
+.logo img {
+  height: 100%;
+  width: auto;
 }
 
 .nav {

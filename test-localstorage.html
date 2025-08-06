@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>LocalStorage Test</title>
+</head>
+<body>
+    <h1>LocalStorage Test</h1>
+    <button onclick="testLocalStorage()">Test LocalStorage</button>
+    <div id="result"></div>
+
+    <script>
+        function testLocalStorage() {
+            try {
+                // Test basic localStorage functionality
+                localStorage.setItem('test-key', 'test-value');
+                const value = localStorage.getItem('test-key');
+                
+                document.getElementById('result').innerHTML = `
+                    <p>LocalStorage is working: ${value}</p>
+                    <p>Current ecommerce-cart: ${localStorage.getItem('ecommerce-cart') || 'Not found'}</p>
+                `;
+                
+                // Clean up
+                localStorage.removeItem('test-key');
+            } catch (error) {
+                document.getElementById('result').innerHTML = `
+                    <p>Error: ${error.message}</p>
+                    <p>LocalStorage might be disabled or blocked</p>
+                `;
+            }
+        }
+    </script>
+</body>
+</html>

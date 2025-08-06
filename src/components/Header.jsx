@@ -5,6 +5,7 @@ import { useAuth } from '../context/AuthContext';
 import Cart from './Cart';
 import Auth from './Auth';
 import Orders from './Orders';
+import logo from '../assets/logo.png';
 import './Header-new.css';
 
 const Header = () => {
@@ -50,7 +51,7 @@ const Header = () => {
         <div className="container">
           <div className="header-content">
             <div className="logo">
-              <h1>HydroNative</h1>
+              <img src={logo} alt="HydroNative Logo" />
             </div>
             
             <nav className={`nav ${isMenuOpen ? 'nav-open' : ''}`}>
