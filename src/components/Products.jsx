@@ -1,6 +1,10 @@
 import { useState } from 'react';
 import { useCart } from '../context/CartContext';
 import { useSearch } from '../context/SearchContext';
+import loofahImage from '../assets/loofah.png';
+import naturalIcon from '../assets/natural.png';
+import ecoIcon from '../assets/eco-icon.png';
+import bioIcon from '../assets/bio-icon.png';
 import './Products.css';
 
 const Products = () => {
@@ -247,17 +251,17 @@ const Products = () => {
               SHOWER YOUR WAY to healthier-looking skin with Egyptian loofah by ALMOONI.
             </p>
             
+          <div className="loofah-icons">
+              <img src={naturalIcon} alt="Natural" />
+              <img src={ecoIcon} alt="Eco Friendly" />
+              <img src={bioIcon} alt="Biodegradable" />
+            </div>
           </div>
           <div className="loofah-image">
-            <img src="/src/assets/loofah.png" alt="Loofah plant" />
+            <img src={loofahImage} alt="Loofah plant" />
           </div>
         </div>
       </div>
-            <div className="loofah-icons">
-              <img src="/src/assets/natural.png" alt="Natural" />
-              <img src="/src/assets/eco-icon.png" alt="Eco Friendly" />
-              <img src="/src/assets/bio-icon.png" alt="Biodegradable" />
-            </div>
     </section>
   );
 };
