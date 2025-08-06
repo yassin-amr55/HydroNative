@@ -5,6 +5,7 @@ import loofahImage from '../assets/loofah.png';
 import naturalIcon from '../assets/natural.png';
 import ecoIcon from '../assets/eco-icon.png';
 import bioIcon from '../assets/bio-icon.png';
+import loofah from '../assets/loofah.png';
 import './Products.css';
 
 const Products = () => {
@@ -18,7 +19,7 @@ const Products = () => {
       name: "Wireless Bluetooth Earbuds",
       price: "$79.99",
       originalPrice: "$99.99",
-      image: "https://images.pexels.com/photos/3394650/pexels-photo-3394650.jpeg?auto=compress&cs=tinysrgb&w=400",
+      image: loofah,
       category: "electronics",
       delivery: 25,
       reviews: 128
@@ -28,7 +29,7 @@ const Products = () => {
       name: "Smart Fitness Watch",
       price: "$199.99",
       originalPrice: "$249.99",
-      image: "https://images.pexels.com/photos/393047/pexels-photo-393047.jpeg?auto=compress&cs=tinysrgb&w=400",
+      image: loofah,
       category: "electronics",
       delivery: 5,
       reviews: 89
@@ -38,7 +39,7 @@ const Products = () => {
       name: "Premium Coffee Mug",
       price: "$24.99",
       originalPrice: "$29.99",
-      image: "https://images.pexels.com/photos/302899/pexels-photo-302899.jpeg?auto=compress&cs=tinysrgb&w=400",
+      image: loofah,
       category: "home",
       delivery: 12,
       reviews: 56
@@ -48,7 +49,7 @@ const Products = () => {
       name: "Designer Sunglasses",
       price: "$149.99",
       originalPrice: "$199.99",
-      image: "https://images.pexels.com/photos/46710/pexels-photo-46710.jpeg?auto=compress&cs=tinysrgb&w=400",
+      image: loofah,
       category: "fashion",
       delivery: 2,
       reviews: 234
@@ -58,7 +59,7 @@ const Products = () => {
       name: "Laptop Stand Adjustable",
       price: "$45.99",
       originalPrice: "$59.99",
-      image: "https://images.pexels.com/photos/18105/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=400",
+      image: loofah,
       category: "electronics",
       delivery: 3,
       reviews: 67
@@ -68,7 +69,7 @@ const Products = () => {
       name: "Organic Cotton T-Shirt",
       price: "$29.99",
       originalPrice: "$39.99",
-      image: "https://images.pexels.com/photos/996329/pexels-photo-996329.jpeg?auto=compress&cs=tinysrgb&w=400",
+      image: loofah,
       category: "fashion",
       delivery: 44,
       reviews: 145
@@ -78,7 +79,7 @@ const Products = () => {
       name: "Ceramic Plant Pot",
       price: "$19.99",
       originalPrice: "$24.99",
-      image: "https://images.pexels.com/photos/1005058/pexels-photo-1005058.jpeg?auto=compress&cs=tinysrgb&w=400",
+      image: loofah,
       category: "home",
       delivery: 12,
       reviews: 92
@@ -88,7 +89,7 @@ const Products = () => {
       name: "Wireless Charging Pad",
       price: "$34.99",
       originalPrice: "$44.99",
-      image: "https://images.pexels.com/photos/4219654/pexels-photo-4219654.jpeg?auto=compress&cs=tinysrgb&w=400",
+      image: loofah,
       category: "electronics",
       delivery: 3,
       reviews: 78
@@ -98,7 +99,7 @@ const Products = () => {
       name: "Minimalist Backpack",
       price: "$89.99",
       originalPrice: "$119.99",
-      image: "https://images.pexels.com/photos/2905238/pexels-photo-2905238.jpeg?auto=compress&cs=tinysrgb&w=400",
+      image: loofah,
       category: "fashion",
       delivery: 6,
       reviews: 156
@@ -108,7 +109,7 @@ const Products = () => {
       name: "LED Desk Lamp",
       price: "$54.99",
       originalPrice: "$69.99",
-      image: "https://images.pexels.com/photos/1112598/pexels-photo-1112598.jpeg?auto=compress&cs=tinysrgb&w=400",
+      image: loofah,
       category: "home",
       delivery: 2,
       reviews: 203
