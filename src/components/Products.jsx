@@ -248,7 +248,7 @@ const Products = () => {
               Egyptian natural loofahs originated in ancient Egypt, where the <em>Luffa aegyptiaca</em> plant was used as a natural sponge for bathing and exfoliation — a tradition thousands of years old.
             </p>
             <p className="highlight">
-              SHOWER YOUR WAY to healthier-looking skin with Egyptian loofah by ALMOONI.
+              SHOWER YOUR WAY to healthier-looking skin with Egyptian loofah by HydroNative.
             </p>
             
           <div className="loofah-icons">
