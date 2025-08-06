@@ -51,17 +51,20 @@
   flex: 1;
   display: flex;
   height: 100%;
-  margin-right: 50px;
+  margin-right: 60px;
 }
 
 .featured-image img {
   max-width: 100%;
-  max-height: 100vh;
+  max-height: 110vh;
   object-fit: contain;
   border-radius: 10px;
 }
 
 @media (max-width: 768px) {
+  .featured-products {
+    height: auto;
+  }
   .featured-content {
     flex-direction: column;
     text-align: center;
@@ -69,8 +72,8 @@
   }
 
   .featured-text {
-    padding-right: 0;
-    margin-bottom: 2rem;
+    padding: 0;
+    margin: 0;
   }
 
   .featured-text h1 {
@@ -79,6 +82,7 @@
 
   .featured-image {
     width: 100%;
+    margin: 0;
     height: auto;
   }
 
