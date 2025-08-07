@@ -20,7 +20,7 @@ const Products = () => {
       price: "$79.99",
       originalPrice: "$99.99",
       image: loofah,
-      category: "electronics",
+      category: "bath",
       delivery: 25,
       reviews: 128
     },
@@ -30,7 +30,7 @@ const Products = () => {
       price: "$199.99",
       originalPrice: "$249.99",
       image: loofah,
-      category: "electronics",
+      category: "kitchen",
       delivery: 5,
       reviews: 89
     },
@@ -40,7 +40,7 @@ const Products = () => {
       price: "$24.99",
       originalPrice: "$29.99",
       image: loofah,
-      category: "home",
+      category: "kitchen",
       delivery: 12,
       reviews: 56
     },
@@ -50,7 +50,7 @@ const Products = () => {
       price: "$149.99",
       originalPrice: "$199.99",
       image: loofah,
-      category: "fashion",
+      category: "bath",
       delivery: 2,
       reviews: 234
     },
@@ -60,7 +60,7 @@ const Products = () => {
       price: "$45.99",
       originalPrice: "$59.99",
       image: loofah,
-      category: "electronics",
+      category: "pets",
       delivery: 3,
       reviews: 67
     },
@@ -70,7 +70,7 @@ const Products = () => {
       price: "$29.99",
       originalPrice: "$39.99",
       image: loofah,
-      category: "fashion",
+      category: "sale",
       delivery: 44,
       reviews: 145
     },
@@ -80,7 +80,7 @@ const Products = () => {
       price: "$19.99",
       originalPrice: "$24.99",
       image: loofah,
-      category: "home",
+      category: "bath",
       delivery: 12,
       reviews: 92
     },
@@ -90,7 +90,7 @@ const Products = () => {
       price: "$34.99",
       originalPrice: "$44.99",
       image: loofah,
-      category: "electronics",
+      category: "new",
       delivery: 3,
       reviews: 78
     },
@@ -100,7 +100,7 @@ const Products = () => {
       price: "$89.99",
       originalPrice: "$119.99",
       image: loofah,
-      category: "fashion",
+      category: "new",
       delivery: 6,
       reviews: 156
     },
@@ -110,7 +110,7 @@ const Products = () => {
       price: "$54.99",
       originalPrice: "$69.99",
       image: loofah,
-      category: "home",
+      category: "bath",
       delivery: 2,
       reviews: 203
     }
