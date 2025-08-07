@@ -166,7 +166,7 @@ const Products = () => {
     const button = event.target;
     const originalText = button.textContent;
     button.textContent = 'Added!';
-    button.style.background = '#10b981';
+    button.style.background = 'var(--green-hover)';
     setTimeout(() => {
       button.textContent = originalText;
       button.style.background = '';

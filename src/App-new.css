@@ -67,7 +67,7 @@ main {
 .btn:hover {
   background-color: var(--green-hover);
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(39, 174, 96, 0.4);
+  box-shadow: 0 4px 12px rgba(180, 141, 97, 0.4);
 }
 
 .btn-secondary {
