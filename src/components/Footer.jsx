@@ -42,10 +42,9 @@ const Footer = () => {
           <div className="footer-section sectiontwo">
             <h4>Categories</h4>
             <ul>
-              <li><a href="#electronics">Electronics</a></li>
-              <li><a href="#fashion">Fashion</a></li>
-              <li><a href="#home">Home & Living</a></li>
-              <li><a href="#sports">Sports</a></li>
+              <li><a href="#bath">Bath</a></li>
+              <li><a href="#kitchen">Kitchen</a></li>
+              <li><a href="#pets">Pets</a></li>
             </ul>
           </div>
 
