@@ -8,7 +8,7 @@ const FeaturedProducts = () => {
     <section className="featured-products" id="home">
         <div className="featured-content">
           <div className="featured-text">
-            <h1>The Loofah That Fits Your <span>Green Lifestyle</span></h1>
+            <h1>The Loofah That Fits Your <span>GREEN LIFESTYLE</span></h1>
             <p>"Nature’s Touch. Skin’s Delight."</p>
             <button className="cta-button" onClick={() => document.getElementById('products').scrollIntoView({ behavior: 'smooth' })}>
               Shop Now
