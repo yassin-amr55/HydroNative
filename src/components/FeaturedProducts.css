@@ -24,15 +24,19 @@
 }
 
 .featured-text h1 {
-  font-size: 3rem;
+  font-size: 2.3rem;
   margin-bottom: 1rem;
   color: white;
 }
 
 .featured-text p {
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   margin-bottom: 2rem;
   color: rgba(255, 255, 255, 0.9);
+}
+
+.featured-text span {
+  color: green;
 }
 
 .cta-button {
