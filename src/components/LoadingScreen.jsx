@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
+import loader from '../assets/loader.gif';
 import './LoadingScreen.css';
 
 const LoadingScreen = ({ onLoadComplete }) => {
@@ -72,7 +73,7 @@ const LoadingScreen = ({ onLoadComplete }) => {
     <div className="loading-screen">
       <div className="loading-content">
         <img 
-          src="/src/assets/loader.gif" 
+          src={loader} 
           alt="Loading..." 
           className="loading-gif"
         />
