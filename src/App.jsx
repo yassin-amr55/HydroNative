@@ -1,4 +1,4 @@
-import React from 'react';
+import { useState, useEffect } from 'react';
 import { CartProvider } from './context/CartContext';
 import { SearchProvider } from './context/SearchContext';
 import { AuthProvider } from './context/AuthContext';
@@ -8,14 +8,28 @@ import FeaturedProducts from './components/FeaturedProducts';
 import Products from './components/Products';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import LoadingScreen from './components/LoadingScreen';
 import './App-new.css';
 
 function App() {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    // Preload the loader.gif
+    const loaderImg = new Image();
+    loaderImg.src = '/src/assets/loader.gif';
+  }, []);
+
+  const handleLoadComplete = () => {
+    setIsLoading(false);
+  };
+
   return (
     <AuthProvider>
       <OrderProvider>
         <CartProvider>
           <SearchProvider>
+            {isLoading && <LoadingScreen onLoadComplete={handleLoadComplete} />}
             <div className="App">
               <Header />
               <main>
