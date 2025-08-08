@@ -9,7 +9,7 @@ const FeaturedProducts = () => {
         <div className="featured-content">
           <div className="featured-text">
             <h1>Welcome to HydroNative</h1>
-            <p>Your trusted online shopping destination for quality products at great prices.</p>
+            <p>"Nature’s Touch. Skin’s Delight."</p>
             <button className="cta-button" onClick={() => document.getElementById('products').scrollIntoView({ behavior: 'smooth' })}>
               Shop Now
             </button>
