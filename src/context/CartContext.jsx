@@ -93,7 +93,7 @@ export const CartProvider = ({ children }) => {
 
   const getCartTotal = () => {
     return state.items.reduce((total, item) => {
-      const price = parseFloat(item.price.replace('$', ''));
+      const price = '$';
       return total + (price * item.quantity);
     }, 0);
   };

@@ -9,6 +9,8 @@ import Products from './components/Products';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import LoadingScreen from './components/LoadingScreen';
+import ProductDetail from './components/ProductDetail';
+import { Routes, Route } from 'react-router-dom'
 import './App-new.css';
 
 function App() {
@@ -33,9 +35,16 @@ function App() {
             <div className="App">
               <Header />
               <main>
-                <FeaturedProducts />
-                <Products />
-                <Contact />
+                <Routes>
+                  <Route path="/" element={
+                    <>
+                      <FeaturedProducts />
+                      <Products />
+                      <Contact />
+                    </>
+                  } />
+                  <Route path="/discription/:id" element={<ProductDetail />} />
+                </Routes>
               </main>
               <Footer />
             </div>

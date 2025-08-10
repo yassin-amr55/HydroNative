@@ -43,76 +43,6 @@ const Products = () => {
       category: "kitchen",
       delivery: 12,
       reviews: 56
-    },
-    {
-      id: 4,
-      name: "Designer Sunglasses",
-      price: "$149.99",
-      originalPrice: "$199.99",
-      image: loofah,
-      category: "bath",
-      delivery: 2,
-      reviews: 234
-    },
-    {
-      id: 5,
-      name: "Laptop Stand Adjustable",
-      price: "$45.99",
-      originalPrice: "$59.99",
-      image: loofah,
-      category: "pets",
-      delivery: 3,
-      reviews: 67
-    },
-    {
-      id: 6,
-      name: "Organic Cotton T-Shirt",
-      price: "$29.99",
-      originalPrice: "$39.99",
-      image: loofah,
-      category: "sale",
-      delivery: 44,
-      reviews: 145
-    },
-    {
-      id: 7,
-      name: "Ceramic Plant Pot",
-      price: "$19.99",
-      originalPrice: "$24.99",
-      image: loofah,
-      category: "bath",
-      delivery: 12,
-      reviews: 92
-    },
-    {
-      id: 8,
-      name: "Wireless Charging Pad",
-      price: "$34.99",
-      originalPrice: "$44.99",
-      image: loofah,
-      category: "new",
-      delivery: 3,
-      reviews: 78
-    },
-    {
-      id: 9,
-      name: "Minimalist Backpack",
-      price: "$89.99",
-      originalPrice: "$119.99",
-      image: loofah,
-      category: "new",
-      delivery: 6,
-      reviews: 156
-    },
-    {
-      id: 10,
-      name: "LED Desk Lamp",
-      price: "$54.99",
-      originalPrice: "$69.99",
-      image: loofah,
-      category: "bath",
-      delivery: 2,
-      reviews: 203
     }
   ];
 
@@ -172,6 +102,10 @@ const Products = () => {
       button.style.background = '';
     }, 1000);
   };
+
+  const handleProductClick = (productId) => {
+    window.location.href = `/discription/${productId}`;
+  };
   return (
     <section className="products section" id="products">
       <div className="container">
@@ -203,7 +137,7 @@ const Products = () => {
         {filteredProducts.length > 0 ? (
           <div className="products-grid">
             {filteredProducts.map(product => (
-              <div key={product.id} className="product-card">
+              <div key={product.id} className="product-card" onClick={() => handleProductClick(product.id)} style={{ cursor: 'pointer' }}>
                 <div className="product-image">
                   <img src={product.image} alt={product.name} />
                 </div>
@@ -222,7 +156,10 @@ const Products = () => {
 
                   <button 
                     className="btn add-to-cart-btn"
-                    onClick={() => handleAddToCart(product)}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      handleAddToCart(product);
+                    }}
                   >
                     Add to Cart
                   </button>

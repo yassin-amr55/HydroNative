@@ -44,14 +44,16 @@ const Header = () => {
     setIsOrdersOpen(true);
     setShowAccountMenu(false);
   };
-
+  
   return (
     <>
       <header className="header">
         <div className="container">
           <div className="header-content">
             <div className="logo">
-              <img src={logo} alt="HydroNative Logo" />
+              <a href="/">
+                <img src={logo} alt="HydroNative Logo" />
+              </a>
             </div>
             
             <nav className={`nav ${isMenuOpen ? 'nav-open' : ''}`}>
