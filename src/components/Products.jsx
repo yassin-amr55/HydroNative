@@ -5,46 +5,13 @@ import loofahImage from '../assets/loofah.png';
 import naturalIcon from '../assets/natural.png';
 import ecoIcon from '../assets/eco-icon.png';
 import bioIcon from '../assets/bio-icon.png';
-import loofah from '../assets/loofah.png';
+import { products } from '../data/ProductStats.jsx';
 import './Products.css';
 
 const Products = () => {
   const [selectedCategory, setSelectedCategory] = useState('all');
   const { addToCart } = useCart();
   const { searchQuery, searchProducts } = useSearch();
-
-  const products = [
-    {
-      id: 1,
-      name: "Wireless Bluetooth Earbuds",
-      price: "$79.99",
-      originalPrice: "$99.99",
-      image: loofah,
-      category: "bath",
-      delivery: 25,
-      reviews: 128
-    },
-    {
-      id: 2,
-      name: "Smart Fitness Watch",
-      price: "$199.99",
-      originalPrice: "$249.99",
-      image: loofah,
-      category: "kitchen",
-      delivery: 5,
-      reviews: 89
-    },
-    {
-      id: 3,
-      name: "Premium Coffee Mug",
-      price: "$24.99",
-      originalPrice: "$29.99",
-      image: loofah,
-      category: "kitchen",
-      delivery: 12,
-      reviews: 56
-    }
-  ];
 
   const categories = [
     { id: 'all', name: 'All Products' },
@@ -150,8 +117,8 @@ const Products = () => {
                   </div>
 
                   <div className="product-price">
-                    <span className="current-price">{product.price}</span>
-                    <span className="original-price">{product.originalPrice}</span>
+                    <span className="current-price">${product.price}</span>
+                    <span className="original-price">${product.originalPrice}</span>
                   </div>
 
                   <button 
