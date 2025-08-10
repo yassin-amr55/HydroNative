@@ -104,7 +104,7 @@ const Products = () => {
   };
 
   const handleProductClick = (productId) => {
-    window.location.href = `/discription/${productId}`;
+    window.location.href = `/product/${productId}`;
   };
   return (
     <section className="products section" id="products">

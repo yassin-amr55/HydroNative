@@ -43,7 +43,7 @@ function App() {
                       <Contact />
                     </>
                   } />
-                  <Route path="/discription/:id" element={<ProductDetail />} />
+                  <Route path="/product/:id" element={<ProductDetail />} />
                 </Routes>
               </main>
               <Footer />
