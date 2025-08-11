@@ -93,7 +93,7 @@ export const CartProvider = ({ children }) => {
 
   const getCartTotal = () => {
     return state.items.reduce((total, item) => {
-      const price = '$';
+      const price = item.price || 0;
       return total + (price * item.quantity);
     }, 0);
   };

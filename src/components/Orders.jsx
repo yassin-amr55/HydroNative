@@ -101,7 +101,7 @@ const Orders = ({ isOpen, onClose }) => {
                           <p>Quantity: {item.quantity}</p>
                         </div>
                         <div className="item-price">
-                          ${(parseFloat(item.price.replace('$', '')) * item.quantity).toFixed(2)}
+                          ${(item.price * item.quantity).toFixed(2)}
                         </div>
                       </div>
                     ))}

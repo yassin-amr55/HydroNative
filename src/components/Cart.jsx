@@ -56,7 +56,7 @@ const Cart = ({ isOpen, onClose }) => {
                       <img src={item.image} alt={item.name} className="cart-item-image" />
                       <div className="cart-item-details">
                         <h4>{item.name}</h4>
-                        <p className="cart-item-price">{item.price}</p>
+                        <p className="cart-item-price">${item.price}</p>
                         <div className="cart-item-controls">
                           <button 
                             className="quantity-btn"
