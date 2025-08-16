@@ -1,12 +1,11 @@
 import { useState, useEffect } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
 import { products } from '../data/ProductStats.jsx';
 import './ProductDetail.css';
 
 const ProductDetail = () => {
   const { id } = useParams();
-  const navigate = useNavigate();
   const { addToCart } = useCart();
   const [product, setProduct] = useState(null);
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
@@ -37,7 +36,7 @@ const ProductDetail = () => {
   }
 
   const handleAddToCart = () => {
-    addToCart(product);
+    addToCart(product, quantity);
     const button = event.target;
     const originalText = button.textContent;
     button.textContent = 'Added!';

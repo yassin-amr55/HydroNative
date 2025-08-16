@@ -1,25 +1,27 @@
-import React, { createContext, useContext, useReducer, useEffect } from 'react';
+import { createContext, useContext, useReducer, useEffect } from 'react';
 
 const CartContext = createContext();
 
 const cartReducer = (state, action) => {
   switch (action.type) {
-    case 'ADD_TO_CART':
-      const existingItem = state.items.find(item => item.id === action.payload.id);
+    case 'ADD_TO_CART': {
+      const { product, quantity = 1 } = action.payload;
+      const existingItem = state.items.find(item => item.id === product.id);
       if (existingItem) {
         return {
           ...state,
           items: state.items.map(item =>
-            item.id === action.payload.id
-              ? { ...item, quantity: item.quantity + 1 }
+            item.id === product.id
+              ? { ...item, quantity: item.quantity + quantity }
               : item
           )
         };
       }
       return {
         ...state,
-        items: [...state.items, { ...action.payload, quantity: 1 }]
+        items: [...state.items, { ...product, quantity: quantity }]
       };
+    }
 
     case 'REMOVE_FROM_CART':
       return {
@@ -75,8 +77,8 @@ export const CartProvider = ({ children }) => {
     localStorage.setItem('ecommerce-cart', JSON.stringify(state.items));
   }, [state.items]);
 
-  const addToCart = (product) => {
-    dispatch({ type: 'ADD_TO_CART', payload: product });
+  const addToCart = (product, quantity = 1) => {
+    dispatch({ type: 'ADD_TO_CART', payload: { product, quantity } });
   };
 
   const removeFromCart = (productId) => {
