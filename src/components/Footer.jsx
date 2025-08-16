@@ -42,19 +42,18 @@ const Footer = () => {
           <div className="footer-section sectiontwo">
             <h4>Categories</h4>
             <ul>
-              <li><a href="#bath">Bath</a></li>
-              <li><a href="#kitchen">Kitchen</a></li>
-              <li><a href="#pets">Pets</a></li>
+              <li><a>Bath</a></li>
+              <li><a>Kitchen</a></li>
+              <li><a>Pets</a></li>
             </ul>
           </div>
 
           <div className="footer-section sectiontwo">
             <h4>Customer Service</h4>
             <ul>
-              <li><a href="#help">Help Center</a></li>
-              <li><a href="#shipping">Shipping Info</a></li>
-              <li><a href="#returns">Returns & Exchanges</a></li>
-              <li><a href="#faq">FAQ</a></li>
+              <li><a href="/shipping-info">Shipping Info</a></li>
+              <li><a href="/returns-and-exchanges">Returns & Exchanges</a></li>
+              <li><a href="/faq">FAQ</a></li>
             </ul>
           </div>
         </div>
@@ -62,9 +61,9 @@ const Footer = () => {
         <div className="footer-bottom">
           <p>&copy; 2025 EgyGet. All rights reserved.</p>
           <div className="footer-links">
-            <a href="#privacy">Privacy Policy</a>
-            <a href="#terms">Terms of Service</a>
-            <a href="#cookies">Cookie Policy</a>
+            <a href="/privacy-policy">Privacy Policy</a>
+            <a href="/terms-of-service">Terms of Service</a>
+            <a href="/cookie-policy">Cookie Policy</a>
           </div>
         </div>
       </div>

@@ -19,6 +19,7 @@
 
 .logo {
   height: 50px;
+  cursor: pointer;
 }
 .logo img {
   height: 100%;

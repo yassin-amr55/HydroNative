@@ -10,6 +10,12 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 import LoadingScreen from './components/LoadingScreen';
 import ProductDetail from './components/ProductDetail';
+import PrivacyPolicy from './components/PrivacyPolicy';
+import TermsOfService from './components/TermsOfService';
+import CookiePolicy from './components/CookiePolicy';
+import FAQ from './components/FAQ';
+import ReturnsAndExchanges from './components/ReturnsAndExchanges';
+import ShippingInfo from './components/ShippingInfo';
 import { Routes, Route } from 'react-router-dom'
 import './App-new.css';
 
@@ -43,6 +49,12 @@ function App() {
                       <Contact />
                     </>
                   } />
+                  <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+                  <Route path="/terms-of-service" element={<TermsOfService />} />
+                  <Route path="/cookie-policy" element={<CookiePolicy />} />
+                  <Route path="/faq" element={<FAQ />} />
+                  <Route path="/returns-and-exchanges" element={<ReturnsAndExchanges />} />
+                  <Route path="/shipping-info" element={<ShippingInfo />} />
                   <Route path="/product/:id" element={<ProductDetail />} />
                 </Routes>
               </main>
