@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { useCart } from '../context/CartContext';
 import example from '../assets/example.png';
+import bg from '../assets/Bg.png';
 import './FeaturedProducts.css';
 
 const FeaturedProducts = () => {
   return (
     <section className="featured-products" id="home">
+        <img src={bg} alt="Background" className="background-image" />
         <div className="featured-content">
           <div className="featured-text">
             <h1>The Loofah That Fits Your <span>GREEN LIFESTYLE</span></h1>

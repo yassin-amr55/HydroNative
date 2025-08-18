@@ -5,8 +5,8 @@
   --gray: #7f8c8d;
   --light-gray: #ecf0f1;
   --white: #ffffff;
-  --green: #ffdaad;
-  --green-hover: #ffc987;
+  --green: rgb(0, 99, 0);
+  --green-hover: rgb(0, 67, 0);
   
   /* Text Colors */
   --text-primary: #2c3e50;

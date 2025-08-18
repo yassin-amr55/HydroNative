@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useCart } from '../context/CartContext';
 import { useSearch } from '../context/SearchContext';
 import { useAuth } from '../context/AuthContext';
@@ -18,6 +18,51 @@ const Header = () => {
   const [isOrdersOpen, setIsOrdersOpen] = useState(false);
   const [authMode, setAuthMode] = useState('login');
   const [showAccountMenu, setShowAccountMenu] = useState(false);
+  const [isFeaturedVisible, setIsFeaturedVisible] = useState(false);
+  const headerRef = useRef(null);
+  const searchRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsFeaturedVisible(entry.isIntersecting);
+      },
+      {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1 // Trigger when 10% of FeaturedProducts is visible
+      }
+    );
+
+    const featuredElement = document.getElementById('home');
+    if (featuredElement) {
+      observer.observe(featuredElement);
+    }
+
+    return () => {
+      if (featuredElement) {
+        observer.unobserve(featuredElement);
+      }
+    };
+  }, []);
+
+  useEffect(() => {
+    if (headerRef.current) {
+      if (isFeaturedVisible) {
+        headerRef.current.classList.remove('active');
+      } else {
+        headerRef.current.classList.add('active');
+      }
+    }
+
+    if (searchRef.current) {
+      if (isFeaturedVisible) {
+        searchRef.current.classList.remove('active');
+      } else {
+        searchRef.current.classList.add('active');
+      }
+    }
+  }, [isFeaturedVisible]);
 
   const handleSearch = (e) => {
     e.preventDefault();
@@ -47,7 +92,7 @@ const Header = () => {
 
   return (
     <>
-      <header className="header">
+      <header className="header" ref={headerRef}>
         <div className="container">
           <div className="header-content">
             <div className="logo" onClick={() => window.location.href = '/'}>
@@ -71,6 +116,7 @@ const Header = () => {
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
                     className="search-input"
+                    ref={searchRef}
                   />
                   <button type="submit" className="search-btn">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
