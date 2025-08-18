@@ -1,11 +1,12 @@
 .featured-products {
   color: white;
   width: 100%;
-  min-height: 100vh; /* Ensure minimum height */
+  min-height: 100vh;
   display: flex;
   position: relative;
 }
-.background-image{
+
+.background-image {
   display: block;
   position: absolute;
   left: 0;
@@ -85,7 +86,7 @@
 
 @media (max-width: 1000px) {
   .featured-products {
-    min-height: 150vh;
+    min-height: 100vh;
     padding: 2rem 0;
   }
   
@@ -97,31 +98,50 @@
   .featured-text {
     padding: 0;
     margin-top: 2rem;
-    margin-right: 35px;
     margin-bottom: 2rem;
-    max-width: 100%;
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .featured-text h1 {
     font-size: 2.5rem;
   }
 
+  .featured-text span {
+    font-size: 4rem;
+  }
+
   .featured-image {
     width: 100%;
-    height: 100%;
-    margin: 2rem 0;
+    height: auto;
+    margin: 1rem 0;
   }
 
   .featured-image img {
-    width: auto;
-    position: relative;
-    right: 0;
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    position: static;
   }
 }
 
 @media (max-width: 480px) {
+  .featured-products {
+    min-height: 100vh;
+    padding: 1rem 0;
+  }
+
+  .featured-text {
+    max-width: 95%;
+  }
+
   .featured-text h1 {
     font-size: 2rem;
+  }
+
+  .featured-text span {
+    font-size: 3rem;
   }
 
   .featured-text p {
@@ -131,5 +151,9 @@
   .cta-button {
     padding: 0.8rem 1.5rem;
     font-size: 1rem;
+  }
+
+  .featured-image img {
+    max-width: 250px;
   }
 }
