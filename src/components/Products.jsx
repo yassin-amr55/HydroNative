@@ -58,6 +58,7 @@ const Products = () => {
   };*/
 
   const handleAddToCart = (product) => {
+    if (product.stock !== 'yes') return; // Prevent adding out of stock items
     addToCart(product);
     // Optional: Show a brief success message
     const button = event.target;
@@ -108,12 +109,14 @@ const Products = () => {
                 <div className="product-image">
                   <img src={product.image} alt={product.name} />
                 </div>
-                
+
                 <div className="product-content">
                   <h3 className="product-name">{product.name}</h3>
                   
-                  <div className="product-rating">
-                    <span className="reviews">In {product.delivery} days</span>
+                  <div className="product-stock">
+                    <span className={`stock ${product.stock === 'yes' ? 'in-stock' : 'out-of-stock'}`}>
+                      {product.stock === 'yes' ? 'In Stock' : 'Out of Stock'}
+                    </span>
                   </div>
 
                   <div className="product-price">
@@ -121,14 +124,15 @@ const Products = () => {
                     <span className="original-price">${product.originalPrice}</span>
                   </div>
 
-                  <button 
+                  <button
                     className="btn add-to-cart-btn"
+                    disabled={product.stock !== 'yes'}
                     onClick={(e) => {
                       e.stopPropagation();
                       handleAddToCart(product);
                     }}
                   >
-                    Add to Cart
+                    {product.stock === 'yes' ? 'Add to Cart' : 'Out of Stock'}
                   </button>
                 </div>
               </div>

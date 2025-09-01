@@ -36,6 +36,7 @@ const ProductDetail = () => {
   }
 
   const handleAddToCart = () => {
+    if (product.stock !== 'yes') return; // Prevent adding out of stock items
     addToCart(product, quantity);
     const button = event.target;
     const originalText = button.textContent;
@@ -75,19 +76,22 @@ const ProductDetail = () => {
             ))}
           </div>
 
-          <button 
+          <button
             className="add-to-cart-btn-large"
+            disabled={product.stock !== 'yes'}
             onClick={handleAddToCart}
           >
-            Add to Cart
+            {product.stock === 'yes' ? 'Add to Cart' : 'Out of Stock'}
           </button>
         </div>
 
         <div className="product-info-section">
           <h1 className="product-title">{product.name}</h1>
-          
-          <div className="product-rating">
-            <span className="delivery">Delivery in {product.delivery} days</span>
+
+          <div className="product-stock">
+            <span className={`stock ${product.stock === 'yes' ? 'in-stock' : 'out-of-stock'}`}>
+              {product.stock === 'yes' ? 'In Stock' : 'Out of Stock'}
+            </span>
           </div>
 
           <div className="product-price-section">

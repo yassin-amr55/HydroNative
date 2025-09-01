@@ -22,7 +22,8 @@ export const products = [
         "IPX7 water resistance",
         "Touch controls",
         "Fast charging"
-      ]
+      ],
+      stock: 'yes'
     },
     {
       id: 2,
@@ -45,7 +46,8 @@ export const products = [
         "Water resistant",
         "7-day battery life",
         "Sleep tracking"
-      ]
+      ],
+      stock: 'no'
     },
     {
       id: 3,
@@ -68,6 +70,7 @@ export const products = [
         "Dishwasher safe",
         "Ergonomic handle",
         "12oz capacity"
-      ]
+      ],
+      stock: 'yes'
     }
   ];
