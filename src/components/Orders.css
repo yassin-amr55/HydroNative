@@ -299,9 +299,19 @@
   font-size: 0.9rem;
 }
 
-@media (max-width: 768px) {
+.container.secret-orders {
+  margin-top: 82px;
+}
+@media (max-width: 900px) {
+  .container.secret-orders {
+    margin-top: 146px;
+  }
   .orders-modal {
     max-height: 95vh;
+  }
+
+  .container.secret-orders {
+    margin-top: calc(50px + 1.5rem);
   }
 
   .orders-header {

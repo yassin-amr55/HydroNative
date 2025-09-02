@@ -65,8 +65,9 @@
   color: #555;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   .policy-container {
     padding: 1rem;
+    margin-top: 146px;
   }
 }
