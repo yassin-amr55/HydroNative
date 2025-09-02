@@ -141,6 +141,60 @@
   letter-spacing: 0.5px;
 }
 
+.status-select {
+  color: white;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+.status-select:hover:not(:disabled) {
+  opacity: 0.8;
+}
+
+.status-select:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.status-select option {
+  background: white;
+  color: #374151;
+}
+
+.updating-text {
+  margin-left: 8px;
+  color: #6b7280;
+  font-size: 0.8rem;
+  font-style: italic;
+}
+
+.orders-error {
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.orders-error h3 {
+  margin: 0 0 0.5rem 0;
+  color: #dc2626;
+  font-size: 1rem;
+}
+
+.orders-error p {
+  margin: 0;
+  color: #991b1b;
+  font-size: 0.9rem;
+}
+
 .order-items {
   margin-bottom: 1rem;
 }

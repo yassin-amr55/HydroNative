@@ -10,8 +10,8 @@ const ShippingInfo = () => {
         <h2>Shipping Rates</h2>
         <p>Our shipping rates are based on your order total and shipping method:</p>
         <ul>
-          <li><strong>Free Shipping:</strong> On orders over $50</li>
-          <li><strong>Standard Shipping:</strong> $3.99 for orders under $50</li>
+          <li><strong>Free Shipping:</strong> On orders over $25</li>
+          <li><strong>Standard Shipping:</strong> $3.99 for orders under $25</li>
         </ul>
       </section>
 
