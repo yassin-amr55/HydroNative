@@ -9,7 +9,7 @@ import logo from '../assets/logo.png';
 import './Header-new.css';
 
 const Header = () => {
-  const { searchQuery, setSearchQuery } = useSearch();
+  const { searchQuery, setSearchQuery, setSelectedCategory } = useSearch();
   const { getCartItemsCount } = useCart();
   const { user, logout } = useAuth();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -98,13 +98,12 @@ const Header = () => {
             <div className="logo" onClick={() => window.location.href = '/'}>
                 <img src={logo} alt="HydroNative Logo" />
             </div>
-            
             <nav className={`nav ${isMenuOpen ? 'nav-open' : ''}`}>
-              <button className="header-btn bold">Bath</button>
-              <button className="header-btn bold">Kitchen</button>
-              <button className="header-btn bold">pets</button>
-              <button className="header-btn">sale</button>
-              <button className="header-btn">new&trending</button>
+              <button className="header-btn bold" onClick={() => { setSelectedCategory('bath'); document.getElementById('products').scrollIntoView({ behavior: 'smooth' }); }}>Bath</button>
+              <button className="header-btn bold" onClick={() => { setSelectedCategory('kitchen'); document.getElementById('products').scrollIntoView({ behavior: 'smooth' }); }}>Kitchen</button>
+              <button className="header-btn bold" onClick={() => { setSelectedCategory('pets'); document.getElementById('products').scrollIntoView({ behavior: 'smooth' }); }}>pets</button>
+              <button className="header-btn" onClick={() => { setSelectedCategory('sale'); document.getElementById('products').scrollIntoView({ behavior: 'smooth' }); }}>sale</button>
+              <button className="header-btn" onClick={() => { setSelectedCategory('new'); document.getElementById('products').scrollIntoView({ behavior: 'smooth' }); }}>new&trending</button>
             </nav>
 
             <div className="header-right">

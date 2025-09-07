@@ -5,6 +5,7 @@ const SearchContext = createContext();
 export const SearchProvider = ({ children }) => {
   const [searchQuery, setSearchQuery] = useState('');
   const [searchResults, setSearchResults] = useState([]);
+  const [selectedCategory, setSelectedCategory] = useState('all');
 
   const searchProducts = (products, query) => {
     if (!query.trim()) {
@@ -14,7 +15,8 @@ export const SearchProvider = ({ children }) => {
     const lowercaseQuery = query.toLowerCase();
     return products.filter(product =>
       product.name.toLowerCase().includes(lowercaseQuery) ||
-      product.category.toLowerCase().includes(lowercaseQuery)
+      (Array.isArray(product.category) && product.category.some(cat => cat.toLowerCase().includes(lowercaseQuery))) ||
+      product.description.toLowerCase().includes(lowercaseQuery)
     );
   };
 
@@ -23,7 +25,9 @@ export const SearchProvider = ({ children }) => {
     setSearchQuery,
     searchResults,
     setSearchResults,
-    searchProducts
+    searchProducts,
+    selectedCategory,
+    setSelectedCategory
   };
 
   return (

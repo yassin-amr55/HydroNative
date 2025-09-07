@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { useCart } from '../context/CartContext';
 import { useSearch } from '../context/SearchContext';
 import loofahImage from '../assets/loofah.png';
@@ -9,9 +8,8 @@ import { products } from '../data/ProductStats.jsx';
 import './Products.css';
 
 const Products = () => {
-  const [selectedCategory, setSelectedCategory] = useState('all');
   const { addToCart } = useCart();
-  const { searchQuery, searchProducts } = useSearch();
+  const { searchQuery, searchProducts, selectedCategory, setSelectedCategory } = useSearch();
 
   const categories = [
     { id: 'all', name: 'All Products' },
@@ -86,7 +84,7 @@ const Products = () => {
         <h2 className="section-title">
           {searchQuery ? `Search Results for "${searchQuery}"` : 'Our Products'}
         </h2>
-        
+
         {searchQuery && (
           <div className="search-info">
             <p>{filteredProducts.length} product{filteredProducts.length !== 1 ? 's' : ''} found</p>
@@ -107,6 +105,12 @@ const Products = () => {
             </button>
           ))}
         </div>
+        
+        {selectedCategory === 'sale' && (
+          <div className="sale-banner">
+            <p>1st month sale</p>
+          </div>
+        )}
 
         {filteredProducts.length > 0 ? (
           <div className="products-grid">

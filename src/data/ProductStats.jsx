@@ -35,7 +35,7 @@ export const products = [
         backBelt3
       ],
       description: "Indulge in a soothing back massage with this natural loofah belt. Designed to fit comfortably around your back, it provides gentle exfoliation and massage while you shower. Perfect for relieving tension and promoting healthy skin.",
-      category: ["bath", "sale"],
+      category: ["bath", "sale", "new"],
       delivery: 25,
       reviews: 128,
       features: [
@@ -59,7 +59,7 @@ export const products = [
         hand3
       ],
       description: "Achieve smooth, exfoliated skin with this comfortable loofah glove. Perfect for gentle scrubbing of hands, body, or even light kitchen use. Made from natural fibers for effective yet kind exfoliation.",
-      category: ["kitchen", "sale"],
+      category: ["kitchen", "sale", "new"],
       delivery: 5,
       reviews: 89,
       features: [
@@ -203,7 +203,7 @@ export const products = [
         stick3
       ],
       description: "Reach those hard-to-get spots with this convenient loofah stick scrubber. Perfect for back scrubbing or cleaning tight spaces, combining natural exfoliation with ergonomic design.",
-      category: ["bath", "sale"],
+      category: ["bath", "sale", "new"],
       delivery: 18,
       reviews: 87,
       features: [
