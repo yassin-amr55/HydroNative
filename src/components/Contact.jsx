@@ -1,13 +1,29 @@
-import React, { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useForm, ValidationError } from '@formspree/react';
 import './Contact.css';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    subject: '',
     message: ''
   });
+
+  const [status, setStatus] = useState('');
+  const [state, handleSubmit] = useForm("xrbarano");
+
+  useEffect(() => {
+    if (state.submitting) {
+      setStatus('Sending...');
+    } else if (state.succeeded) {
+      setStatus('Thanks for contacting us!');
+      setFormData({ name: '', email: '', message: '' });
+      setTimeout(() => setStatus(''), 3000);
+    } else if (state.errors && state.errors.length > 0) {
+      setStatus('❌ Failed to send. Please try again.');
+      setTimeout(() => setStatus(''), 3000);
+    }
+  }, [state.submitting, state.succeeded, state.errors]);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -17,13 +33,33 @@ const Contact = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log('Form submitted:', formData);
-    // Handle form submission logic here
-    alert('Thank you for your message! We will get back to you soon.');
-    setFormData({ name: '', email: '', subject: '', message: '' });
-  };
+  // Remove this handleSubmit function because useForm provides handleSubmit
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
+  //   setStatus('Sending...');
+
+  //   try {
+  //     const response = await fetch("https://formspree.io/f/xrbarano", {
+  //       method: "POST",
+  //       headers: {
+  //         "Content-Type": "application/json"
+  //       },
+  //       body: JSON.stringify(formData)
+  //     });
+
+  //     if (response.ok) {
+  //       setStatus('✅ Message sent successfully!');
+  //       setFormData({ name: '', email: '', message: '' });
+  //       setTimeout(() => setStatus(''), 1000);
+  //     } else {
+  //       setStatus('❌ Failed to send. Please try again.');
+  //       setTimeout(() => setStatus(''), 1000);
+  //     }
+  //   } catch {
+  //     setStatus('⚠️ Error sending message. Try later.');
+  //     setTimeout(() => setStatus(''), 1000);
+  //   }
+  // };
 
   return (
     <section className="contact section" id="contact">
@@ -34,56 +70,24 @@ const Contact = () => {
           <div className="contact-info">
             <h3>Get in Touch</h3>
             <p>We'd love to hear from you. Send us a message and we'll respond as soon as possible.</p>
-            
+
             <div className="contact-item">
-              <div className="contact-icon">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
-                  <circle cx="12" cy="10" r="3"/>
-                </svg>
-              </div>
-              <div>
-                <h4>Address</h4>
-                <p>192 Nour city, Hadayek October,<br/> 6th of october, Giza, Egypt</p>
-              </div>
+              <h4>Phone</h4>
+              <p>
+                <a href="tel:+12817775462">+1-281-777-5462</a>
+              </p>
             </div>
 
             <div className="contact-item">
-              <div className="contact-icon">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
-                </svg>
-              </div>
-              <div>
-                <h4>Phone</h4>
-                <p>+20 106 600 4890</p>
-              </div>
+              <h4>Email</h4>
+              <p>
+                <a href="mailto:hydro.native@yahoo.com">hydro.native@yahoo.com</a>
+              </p>
             </div>
 
             <div className="contact-item">
-              <div className="contact-icon">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-                  <polyline points="22,6 12,13 2,6"/>
-                </svg>
-              </div>
-              <div>
-                <h4>Email</h4>
-                <p>info@egyget.com</p>
-              </div>
-            </div>
-
-            <div className="contact-item">
-              <div className="contact-icon">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <circle cx="12" cy="12" r="10"/>
-                  <polyline points="12,6 12,12 16,14"/>
-                </svg>
-              </div>
-              <div>
-                <h4>Business Hours</h4>
-                <p>12:00 AM - 9:00 PM</p>
-              </div>
+              <h4>Business Hours</h4>
+              <p>12:00 PM - 12:00 AM</p>
             </div>
           </div>
 
@@ -91,6 +95,7 @@ const Contact = () => {
             <form onSubmit={handleSubmit} className="form-holder">
               <div className="form-group">
                 <input
+                  id="name"
                   type="text"
                   name="name"
                   placeholder="Your Name"
@@ -102,6 +107,7 @@ const Contact = () => {
 
               <div className="form-group">
                 <input
+                  id="email"
                   type="email"
                   name="email"
                   placeholder="Your Email"
@@ -109,10 +115,16 @@ const Contact = () => {
                   onChange={handleInputChange}
                   required
                 />
+                <ValidationError
+                  prefix="Email"
+                  field="email"
+                  errors={state.errors}
+                />
               </div>
 
               <div className="form-group">
                 <textarea
+                  id="message"
                   name="message"
                   placeholder="Your Message"
                   rows="5"
@@ -120,10 +132,20 @@ const Contact = () => {
                   onChange={handleInputChange}
                   required
                 ></textarea>
+                <ValidationError
+                  prefix="Message"
+                  field="message"
+                  errors={state.errors}
+                />
               </div>
 
-              <button type="submit" className="btn submit-btn">Send Message</button>
+              <button type="submit" className="btn submit-btn" disabled={state.submitting}>Send Message</button>
             </form>
+            {status && (
+              <div className={`form-status ${status === 'Thanks for contacting us!' ? 'success' : 'error'}`}>
+                {status}
+              </div>
+            )}
           </div>
         </div>
       </div>

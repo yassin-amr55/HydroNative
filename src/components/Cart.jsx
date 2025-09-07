@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useCart } from '../context/CartContext';
 import { useAuth } from '../context/AuthContext';
 import Checkout from './Checkout';
@@ -20,6 +20,10 @@ const Cart = ({ isOpen, onClose }) => {
   };
 
   const handleCheckout = () => {
+    if (!user) {
+      alert("Please sign in first");
+      return;
+    }
     setIsCheckoutOpen(true);
   };
 

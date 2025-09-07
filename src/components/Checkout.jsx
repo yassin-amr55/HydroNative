@@ -48,10 +48,14 @@ const Checkout = ({ isOpen, onClose }) => {
     setIsSubmitting(true);
 
     try {
+      const subtotal = getCartTotal();
+      const delivery = subtotal >= 24 ? 0 : 2.99;
+      const total = subtotal + delivery;
+
       const orderData = {
         userId: user?.uid || 'guest',
         items: items,
-        total: getCartTotal(),
+        total: total,
         customerInfo: {
           name: formData.name,
           email: formData.email,
@@ -286,7 +290,7 @@ const Checkout = ({ isOpen, onClose }) => {
                   className="btn checkout-btn"
                   disabled={isSubmitting}
                 >
-                  {isSubmitting ? 'Placing Order...' : `Place Order - $${getCartTotal().toFixed(2)}`}
+                  {isSubmitting ? 'Placing Order...' : `Place Order - $${(getCartTotal() + (getCartTotal() >= 24 ? 0 : 2.99)).toFixed(2)}`}
                 </button>
               </form>
             </div>
