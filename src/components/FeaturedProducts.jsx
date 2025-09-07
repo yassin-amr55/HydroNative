@@ -20,6 +20,10 @@ const FeaturedProducts = () => {
             <img src={example} alt="HydroNative Logo" />
           </div>
         </div>
+        <div className="featured-info">
+          <b>Free delivery for orders over 25$</b>
+          <b>100% natural Egyptian loofahs</b>
+        </div>
     </section>
   );
 };

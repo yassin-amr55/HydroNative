@@ -89,6 +89,21 @@
   border-radius: 10px;
 }
 
+.featured-info {
+  position: absolute;
+  width: 50%;
+  bottom: 50px; 
+  color: var(--green);
+  left: 25%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 1rem;
+  z-index: 20;
+}
+
 @media (max-width: 1000px) {
   .featured-products {
     min-height: 100vh;

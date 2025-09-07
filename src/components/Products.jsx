@@ -23,9 +23,15 @@ const Products = () => {
   ];
 
   // First filter by category
-  let filteredProducts = selectedCategory === 'all' 
-    ? products 
-    : products.filter(product => product.category === selectedCategory);
+  let filteredProducts = selectedCategory === 'all'
+    ? products
+    : products.filter(product => {
+        if (Array.isArray(product.category)) {
+          return product.category.includes(selectedCategory);
+        } else {
+          return product.category === selectedCategory;
+        }
+      });
 
   // Then filter by search query
   filteredProducts = searchProducts(filteredProducts, searchQuery);

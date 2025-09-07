@@ -24,12 +24,15 @@ const Checkout = ({ isOpen, onClose }) => {
   const [orderComplete, setOrderComplete] = useState(false);
   const [completedOrder, setCompletedOrder] = useState(null);
 
-  const egyptianGovernorates = [
-    'Cairo', 'Alexandria', 'Giza', 'Shubra El Kheima', 'Port Said', 'Suez',
-    'Luxor', 'Mansoura', 'El Mahalla El Kubra', 'Tanta', 'Asyut', 'Ismailia',
-    'Fayyum', 'Zagazig', 'Aswan', 'Damietta', 'Damanhur', 'Minya', 'Beni Suef',
-    'Qena', 'Sohag', 'Hurghada', 'Shibin El Kom', 'Banha', 'Kafr El Sheikh',
-    'Arish', 'Mallawi', 'Bilbays', 'Marsa Matruh', 'Idfu'
+  const usaStates = [
+    "Alabama", "Arizona", "Arkansas", "California", "Colorado", "Connecticut",
+    "Delaware", "Florida", "Georgia", "Idaho", "Illinois", "Indiana",
+    "Iowa", "Kansas", "Kentucky", "Louisiana", "Maine", "Maryland",
+    "Massachusetts", "Michigan", "Minnesota", "Mississippi", "Missouri", "Montana",
+    "Nebraska", "Nevada", "New Hampshire", "New Jersey", "New Mexico", "New York",
+    "North Carolina", "North Dakota", "Ohio", "Oklahoma", "Oregon", "Pennsylvania",
+    "Rhode Island", "South Carolina", "South Dakota", "Tennessee", "Texas", "Utah",
+    "Vermont", "Virginia", "Washington", "West Virginia", "Wisconsin", "Wyoming"
   ];
 
   const handleInputChange = (e) => {
@@ -196,14 +199,14 @@ const Checkout = ({ isOpen, onClose }) => {
                       name="phone"
                       value={formData.phone}
                       onChange={handleInputChange}
-                      placeholder="+20 xxx xxx xxxx"
+                      placeholder="+1-xxx-xxx-xxxx"
                       required
                     />
                   </div>
                 </div>
 
                 <div className="form-section">
-                  <h3>Delivery Address (Egypt Only)</h3>
+                  <h3>Delivery Address (USA Only)</h3>
                   <div className="form-group">
                     <label>Street Address *</label>
                     <input
@@ -227,16 +230,16 @@ const Checkout = ({ isOpen, onClose }) => {
                       />
                     </div>
                     <div className="form-group">
-                      <label>Governorate *</label>
+                      <label>State *</label>
                       <select
                         name="governorate"
                         value={formData.governorate}
                         onChange={handleInputChange}
                         required
                       >
-                        <option value="">Select Governorate</option>
-                        {egyptianGovernorates.map(gov => (
-                          <option key={gov} value={gov}>{gov}</option>
+                        <option value="">Select State</option>
+                        {usaStates.map(state => (
+                          <option key={state} value={state}>{state}</option>
                         ))}
                       </select>
                     </div>
@@ -312,11 +315,11 @@ const Checkout = ({ isOpen, onClose }) => {
                 </div>
                 <div className="total-row">
                   <span>Delivery:</span>
-                  <span>Free</span>
+                  <span>${getCartTotal().toFixed(2) >= 24 ? 0 : 2.99}</span>
                 </div>
                 <div className="total-row final-total">
                   <span>Total:</span>
-                  <span>${getCartTotal().toFixed(2)}</span>
+                  <span>${(getCartTotal() + (getCartTotal() >= 24 ? 0 : 2.99)).toFixed(2)}</span>
                 </div>
               </div>
             </div>
