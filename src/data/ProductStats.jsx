@@ -22,6 +22,7 @@ import squareLoofah3 from '../assets/square loofah3.jpg';
 import stick1 from '../assets/stick1.jpg';
 import stick2 from '../assets/stick2.jpg';
 import stick3 from '../assets/stick3.jpg';
+import bundle1 from '../assets/bundle1.png';
 export const products = [
     {
       id: 1,

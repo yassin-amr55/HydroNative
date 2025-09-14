@@ -5,6 +5,7 @@ import naturalIcon from '../assets/natural.png';
 import ecoIcon from '../assets/eco-icon.png';
 import bioIcon from '../assets/bio-icon.png';
 import { products } from '../data/ProductStats.jsx';
+import { bundles } from '../data/BundleStats.jsx';
 import './Products.css';
 
 const Products = () => {
@@ -17,19 +18,26 @@ const Products = () => {
     { id: 'kitchen', name: 'Kitchen' },
     { id: 'pets', name: 'Pets' },
     { id: 'sale', name: 'Sale' },
-    { id: 'new', name: 'New&Trending' }
+    { id: 'new', name: 'New&Trending' },
+    { id: 'bundles', name: 'Bundles' }
   ];
 
   // First filter by category
-  let filteredProducts = selectedCategory === 'all'
-    ? products
-    : products.filter(product => {
-        if (Array.isArray(product.category)) {
-          return product.category.includes(selectedCategory);
-        } else {
-          return product.category === selectedCategory;
-        }
-      });
+  let filteredProducts = [];
+
+  if (selectedCategory === 'bundles') {
+    filteredProducts = bundles;
+  } else if (selectedCategory === 'all') {
+    filteredProducts = products;
+  } else {
+    filteredProducts = products.filter(product => {
+      if (Array.isArray(product.category)) {
+        return product.category.includes(selectedCategory);
+      } else {
+        return product.category === selectedCategory;
+      }
+    });
+  }
 
   // Then filter by search query
   filteredProducts = searchProducts(filteredProducts, searchQuery);
@@ -113,39 +121,80 @@ const Products = () => {
         )}
 
         {filteredProducts.length > 0 ? (
-          <div className="products-grid">
+          <div className={selectedCategory === 'bundles' ? "bundles-grid" : "products-grid"}>
             {filteredProducts.map(product => (
-              <div key={product.id} className="product-card" onClick={() => handleProductClick(product.id)} style={{ cursor: 'pointer' }}>
-                <div className="product-image">
-                  <img src={product.image} alt={product.name} />
+              selectedCategory === 'bundles' ? (
+                <div key={product.id} className="bundle-card" style={{ cursor: 'default' }}>
+                  <div className="bundle-image">
+                    <img src={product.image} alt={product.name} />
+                  </div>
+                  <div className="bundle-content">
+                    <h3 className="bundle-name">{product.name}</h3>
+                    <p className="bundle-description">{product.description}</p>
+                    <div className="bundle-contents">
+                      <h4>What the bundle offers:</h4>
+                      <ul>
+                        {product.contents.map(item => (
+                          <li key={item.id} className="bundle-item">
+                            <img src={item.image} alt={item.name} className="bundle-item-image" />
+                            <span className="bundle-item-name">{item.name}</span>
+                            <span className="bundle-item-price">
+                              <span className="current-price">${item.price}</span>
+                              <span className="original-price">${item.originalPrice}</span>
+                            </span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                    <div className="bundle-price">
+                      <span className="current-price">${product.price}</span>
+                      <span className="original-price">${product.originalPrice}</span>
+                    </div>
+                    <button
+                      className="btn add-to-cart-btn"
+                      disabled={product.stock !== 'yes'}
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        handleAddToCart(product);
+                      }}
+                    >
+                      {product.stock === 'yes' ? 'Add to Cart' : 'Out of Stock'}
+                    </button>
+                  </div>
                 </div>
-
-                <div className="product-content">
-                  <h3 className="product-name">{product.name}</h3>
-                  
-                  <div className="product-stock">
-                    <span className={`stock ${product.stock === 'yes' ? 'in-stock' : 'out-of-stock'}`}>
-                      {product.stock === 'yes' ? 'In Stock' : 'Out of Stock'}
-                    </span>
+              ) : (
+                <div key={product.id} className="product-card" onClick={() => handleProductClick(product.id)} style={{ cursor: 'pointer' }}>
+                  <div className="product-image">
+                    <img src={product.image} alt={product.name} />
                   </div>
 
-                  <div className="product-price">
-                    <span className="current-price">${product.price}</span>
-                    <span className="original-price">${product.originalPrice}</span>
-                  </div>
+                  <div className="product-content">
+                    <h3 className="product-name">{product.name}</h3>
+                    
+                    <div className="product-stock">
+                      <span className={`stock ${product.stock === 'yes' ? 'in-stock' : 'out-of-stock'}`}>
+                        {product.stock === 'yes' ? 'In Stock' : 'Out of Stock'}
+                      </span>
+                    </div>
 
-                  <button
-                    className="btn add-to-cart-btn"
-                    disabled={product.stock !== 'yes'}
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      handleAddToCart(product);
-                    }}
-                  >
-                    {product.stock === 'yes' ? 'Add to Cart' : 'Out of Stock'}
-                  </button>
+                    <div className="product-price">
+                      <span className="current-price">${product.price}</span>
+                      <span className="original-price">${product.originalPrice}</span>
+                    </div>
+
+                    <button
+                      className="btn add-to-cart-btn"
+                      disabled={product.stock !== 'yes'}
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        handleAddToCart(product);
+                      }}
+                    >
+                      {product.stock === 'yes' ? 'Add to Cart' : 'Out of Stock'}
+                    </button>
+                  </div>
                 </div>
-              </div>
+              )
             ))}
           </div>
         ) : (
