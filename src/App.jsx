@@ -11,6 +11,7 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 import LoadingScreen from './components/LoadingScreen';
 import ProductDetail from './components/ProductDetail';
+import BundleDetail from './components/BundleDetail';
 import PrivacyPolicy from './components/PrivacyPolicy';
 import TermsOfService from './components/TermsOfService';
 import CookiePolicy from './components/CookiePolicy';
@@ -59,6 +60,7 @@ function App() {
                     <Route path="/returns-and-exchanges" element={<ReturnsAndExchanges />} />
                     <Route path="/shipping-info" element={<ShippingInfo />} />
                     <Route path="/product/:id" element={<ProductDetail />} />
+                    <Route path="/bundle/:id" element={<BundleDetail />} />
                     <Route path="/secretorders9274" element={<SecretOrders />} />
                   </Routes>
                 </main>

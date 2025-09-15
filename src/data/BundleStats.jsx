@@ -8,7 +8,7 @@ import { prices, originalPrices } from './Prices.jsx';
 let bundleOnePrice = prices.circleLoofah + prices.stick + prices.cover + prices.dish + prices.hand;
 export const bundles = [
   {
-    id: 9,
+    id: 1,
     name: "Complete Loofah Bundle",
     price: (bundleOnePrice * 0.8).toFixed(2),
     originalPrice: bundleOnePrice.toFixed(2),

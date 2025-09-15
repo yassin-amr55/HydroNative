@@ -124,23 +124,18 @@ const Products = () => {
           <div className={selectedCategory === 'bundles' ? "bundles-grid" : "products-grid"}>
             {filteredProducts.map(product => (
               selectedCategory === 'bundles' ? (
-                <div key={product.id} className="bundle-card" style={{ cursor: 'default' }}>
+                <div key={product.id} className="bundle-card" style={{ cursor: 'pointer' }} onClick={() => window.location.href = `/bundle/${product.id}`}>
                   <div className="bundle-image">
                     <img src={product.image} alt={product.name} />
                   </div>
                   <div className="bundle-content">
                     <h3 className="bundle-name">{product.name}</h3>
-                    <p className="bundle-description">{product.description}</p>
                     <div className="bundle-contents">
                       <h4>What the bundle offers:</h4>
-                      <ul>
+                      <ul className='bundle-ul'>
                         {product.contents.map(item => (
                           <li key={item.id} className="bundle-item">
                             <img src={item.image} alt={item.name} className="bundle-item-image" />
-                            <span className="bundle-item-name">{item.name}</span>
-                            <span className="bundle-item-price">
-                              <span className="current-price">${item.price}</span>
-                            </span>
                           </li>
                         ))}
                       </ul>

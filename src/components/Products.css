@@ -502,10 +502,16 @@
   margin-bottom: 0.5rem;
 }
 
-.bundle-contents ul {
+.bundle-ul {
   list-style: none;
   padding: 0;
   margin: 0 0 1rem 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3rem;
+  flex-wrap: wrap;
 }
 
 .bundle-item {
