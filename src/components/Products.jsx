@@ -140,7 +140,6 @@ const Products = () => {
                             <span className="bundle-item-name">{item.name}</span>
                             <span className="bundle-item-price">
                               <span className="current-price">${item.price}</span>
-                              <span className="original-price">${item.originalPrice}</span>
                             </span>
                           </li>
                         ))}

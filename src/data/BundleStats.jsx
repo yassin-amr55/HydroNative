@@ -4,13 +4,14 @@ import stick1 from '../assets/stick1.jpg';
 import cover1 from '../assets/cover1.jpg';
 import dish1 from '../assets/dish1.jpg';
 import hand1 from '../assets/hand1.jpg';
-
+import { prices, originalPrices } from './Prices.jsx';
+let bundleOnePrice = prices.circleLoofah + prices.stick + prices.cover + prices.dish + prices.hand;
 export const bundles = [
   {
     id: 9,
     name: "Complete Loofah Bundle",
-    price: 25.99,
-    originalPrice: 41.95,
+    price: (bundleOnePrice * 0.8).toFixed(2),
+    originalPrice: bundleOnePrice.toFixed(2),
     image: bundle1,
     images: [bundle1],
     description: "Get the ultimate loofah experience with our complete bundle! This collection includes all essential loofah products for bath and kitchen use, offering great value and convenience.",
@@ -22,36 +23,31 @@ export const bundles = [
         id: 3,
         name: "Round Body Loofah Scrubber",
         image: circleLoofah1,
-        price: 5.99,
-        originalPrice: 7.99
+        price: prices.circleLoofah
       },
       {
         id: 8,
         name: "Loofah Stick Scrubber",
         image: stick1,
-        price: 7.49,
-        originalPrice: 9.49
+        price: prices.stick
       },
       {
         id: 4,
         name: "Natural Loofah Cover",
         image: cover1,
-        price: 4.99,
-        originalPrice: 6.99
+        price: prices.cover
       },
       {
         id: 5,
         name: "Dish Loofah Scrubber",
         image: dish1,
-        price: 6.49,
-        originalPrice: 8.49
+        price: prices.dish
       },
       {
         id: 2,
         name: "Loofah Glove",
         image: hand1,
-        price: 6.99,
-        originalPrice: 8.99
+        price: prices.hand
       }
     ],
     stock: 'yes'
