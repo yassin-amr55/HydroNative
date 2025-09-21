@@ -253,6 +253,7 @@
 
 .recommended-product-card {
   flex: 0 0 auto;
+  flex-direction: column;
   width: 160px;
   border: 1px solid #ddd;
   border-radius: 8px;
