@@ -1,4 +1,44 @@
-import { importProductImages } from '../utils/imageImporter.js';
+// Import all product images directly
+import backBelt1 from '../assets/products/back belt1.jpg';
+import backBelt2 from '../assets/products/back belt2.jpg';
+import backBelt3 from '../assets/products/back belt3.jpg';
+import backBelt4 from '../assets/products/back belt4.jpg';
+
+import hand1 from '../assets/products/hand1.jpg';
+import hand2 from '../assets/products/hand2.jpg';
+import hand3 from '../assets/products/hand3.jpg';
+import hand4 from '../assets/products/hand4.jpg';
+
+import circleLoofah1 from '../assets/products/circle loofah1.jpg';
+import circleLoofah2 from '../assets/products/circle loofah2.jpg';
+import circleLoofah3 from '../assets/products/circle loofah3.jpg';
+import circleLoofah4 from '../assets/products/circle loofah4.jpg';
+
+import cover1 from '../assets/products/cover1.jpg';
+import cover2 from '../assets/products/cover2.jpg';
+import cover3 from '../assets/products/cover3.jpg';
+import cover4 from '../assets/products/cover4.jpg';
+
+import dish1 from '../assets/products/dish1.jpg';
+import dish2 from '../assets/products/dish2.jpg';
+import dish3 from '../assets/products/dish3.jpg';
+import dish4 from '../assets/products/dish4.jpg';
+
+import raw1 from '../assets/products/raw1.jpg';
+import raw2 from '../assets/products/raw2.jpg';
+import raw3 from '../assets/products/raw3.jpg';
+import raw4 from '../assets/products/raw4.jpg';
+
+import squareLoofah1 from '../assets/products/square loofah1.jpg';
+import squareLoofah2 from '../assets/products/square loofah2.jpg';
+import squareLoofah3 from '../assets/products/square loofah3.jpg';
+import squareLoofah4 from '../assets/products/square loofah4.jpg';
+
+import stick1 from '../assets/products/stick1.jpg';
+import stick2 from '../assets/products/stick2.jpg';
+import stick3 from '../assets/products/stick3.jpg';
+import stick4 from '../assets/products/stick4.jpg';
+
 import { prices, originalPrices } from './Prices.jsx';
 
 export const products = [
@@ -7,8 +47,8 @@ export const products = [
     name: "Back Belt Massager Loofah",
     price: prices.backBelt,
     originalPrice: originalPrices.backBelt,
-    image: importProductImages('back belt')[2], // Use the 3rd image as main
-    images: importProductImages('back belt'),
+    image: backBelt3, // Use the 3rd image as main
+    images: [backBelt1, backBelt2, backBelt3, backBelt4],
     description: "Indulge in a soothing back massage with this natural loofah belt. Designed to fit comfortably around your back, it provides gentle exfoliation and massage while you shower. Perfect for relieving tension and promoting healthy skin.",
     category: ["bath", "sale", "new"],
     delivery: 25,
@@ -27,8 +67,8 @@ export const products = [
     name: "Loofah glove",
     price: prices.hand,
     originalPrice: originalPrices.hand,
-    image: importProductImages('hand')[0], // Use the 1st image as main
-    images: importProductImages('hand'),
+    image: hand1, // Use the 1st image as main
+    images: [hand1, hand2, hand3, hand4],
     description: "Achieve smooth, exfoliated skin with this comfortable loofah glove. Perfect for gentle scrubbing of hands, body, or even light kitchen use. Made from natural fibers for effective yet kind exfoliation.",
     category: ["kitchen", "sale", "new"],
     delivery: 5,
@@ -47,8 +87,8 @@ export const products = [
     name: "Round Body Loofah Scrubber",
     price: prices.circleLoofah,
     originalPrice: originalPrices.circleLoofah,
-    image: importProductImages('circle loofah')[0], // Use the 1st image as main
-    images: importProductImages('circle loofah'),
+    image: circleLoofah1, // Use the 1st image as main
+    images: [circleLoofah1, circleLoofah2, circleLoofah3, circleLoofah4],
     description: "Achieve thorough body exfoliation with this round loofah scrubber. Its circular shape provides excellent grip and coverage for effective scrubbing. Made from natural fibers for a gentle yet invigorating cleanse.",
     category: ["bath", "sale"],
     delivery: 12,
@@ -67,8 +107,8 @@ export const products = [
     name: "Natural Loofah Cover",
     price: prices.cover,
     originalPrice: originalPrices.cover,
-    image: importProductImages('cover')[0], // Use the 1st image as main
-    images: importProductImages('cover'),
+    image: cover1, // Use the 1st image as main
+    images: [cover1, cover2, cover3, cover4],
     description: "Protect and preserve your natural loofah with this durable cover. Made from breathable fabric, it keeps your loofah dry and hygienic between uses. Easy to clean and machine washable.",
     category: ["bath", "sale"],
     delivery: 10,
@@ -87,8 +127,8 @@ export const products = [
     name: "Dish Loofah Scrubber",
     price: prices.dish,
     originalPrice: originalPrices.dish,
-    image: importProductImages('dish')[0], // Use the 1st image as main
-    images: importProductImages('dish'),
+    image: dish1, // Use the 1st image as main
+    images: [dish1, dish2, dish3, dish4],
     description: "Tackle tough kitchen messes with this eco-friendly dish loofah scrubber. Naturally abrasive yet gentle on surfaces, perfect for scrubbing pots, pans, and dishes without harsh chemicals.",
     category: ["kitchen", "sale"],
     delivery: 8,
@@ -107,8 +147,8 @@ export const products = [
     name: "Raw Natural Loofah",
     price: prices.raw,
     originalPrice: originalPrices.raw,
-    image: importProductImages('raw')[0], // Use the 1st image as main
-    images: importProductImages('raw'),
+    image: raw1, // Use the 1st image as main
+    images: [raw1, raw2, raw3, raw4],
     description: "Get back to basics with this raw natural loofah. Unprocessed and pure, it provides a gentle exfoliation for your skin. Perfect for those seeking a natural, chemical-free bathing experience.",
     category: ["bath", "sale"],
     delivery: 15,
@@ -127,8 +167,8 @@ export const products = [
     name: "Square Loofah Sponge",
     price: prices.squarLoofah,
     originalPrice: originalPrices.squarLoofah,
-    image: importProductImages('square loofah')[0], // Use the 1st image as main
-    images: importProductImages('square loofah'),
+    image: squareLoofah1, // Use the 1st image as main
+    images: [squareLoofah1, squareLoofah2, squareLoofah3, squareLoofah4],
     description: "Experience deep cleansing with this square loofah sponge. Its unique shape allows for better grip and coverage, making it ideal for thorough body scrubbing and massage.",
     category: ["bath", "sale"],
     delivery: 20,
@@ -147,8 +187,8 @@ export const products = [
     name: "Loofah Stick Scrubber",
     price: prices.stick,
     originalPrice: originalPrices.stick,
-    image: importProductImages('stick')[0], // Use the 1st image as main
-    images: importProductImages('stick'),
+    image: stick1, // Use the 1st image as main
+    images: [stick1, stick2, stick3, stick4],
     description: "Reach those hard-to-get spots with this convenient loofah stick scrubber. Perfect for back scrubbing or cleaning tight spaces, combining natural exfoliation with ergonomic design.",
     category: ["bath", "sale", "new"],
     delivery: 18,
