@@ -1,10 +1,10 @@
 import bundle1 from '../assets/bundle1.png';
-import circleLoofah1 from '../assets/circle loofah1.jpg';
-import stick1 from '../assets/stick1.jpg';
-import cover1 from '../assets/cover1.jpg';
-import dish1 from '../assets/dish1.jpg';
-import hand1 from '../assets/hand1.jpg';
-import { prices, originalPrices } from './Prices.jsx';
+import circleLoofah1 from '../assets/products/circle loofah1.jpg';
+import stick1 from '../assets/products/stick1.jpg';
+import cover1 from '../assets/products/cover1.jpg';
+import dish1 from '../assets/products/dish1.jpg';
+import hand1 from '../assets/products/hand1.jpg';
+import { prices } from './Prices.jsx';
 let bundleOnePrice = prices.circleLoofah + prices.stick + prices.cover + prices.dish + prices.hand;
 export const bundles = [
   {
