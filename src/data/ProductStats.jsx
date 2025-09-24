@@ -53,6 +53,26 @@ export const products = [
     category: ["bath", "sale", "new"],
     delivery: 25,
     reviews: 128,
+    reviewData: [
+      {
+        name: "Alex Johnson",
+        profileImage: "https://i.pravatar.cc/100?u=alex.johnson",
+        rating: 5,
+        comment: "Absolutely love this back belt massager! It feels amazing on my skin and really helps with tension relief."
+      },
+      {
+        name: "Sarah Williams",
+        profileImage: "https://ui-avatars.com/api/?name=Sarah+Williams&background=random&size=100",
+        rating: 4,
+        comment: "Great quality and very comfortable to use. The natural exfoliation is gentle yet effective."
+      },
+      {
+        name: "Mike Chen",
+        profileImage: "https://i.pravatar.cc/100?u=mike.chen",
+        rating: 5,
+        comment: "Perfect for my daily shower routine. Highly recommend for anyone looking for natural skin care."
+      }
+    ],
     features: [
       "Natural exfoliation",
       "Gentle massage",
@@ -67,12 +87,32 @@ export const products = [
     name: "Loofah glove",
     price: prices.hand,
     originalPrice: originalPrices.hand,
-    image: hand1, // Use the 1st image as main
+    image: hand1,
     images: [hand1, hand2, hand3, hand4],
     description: "Achieve smooth, exfoliated skin with this comfortable loofah glove. Perfect for gentle scrubbing of hands, body, or even light kitchen use. Made from natural fibers for effective yet kind exfoliation.",
     category: ["kitchen", "sale", "new"],
     delivery: 5,
     reviews: 89,
+    reviewData: [
+      {
+        name: "Emily Davis",
+        profileImage: "https://ui-avatars.com/api/?name=Emily+Davis&background=random&size=100",
+        rating: 4,
+        comment: "This loofah glove is perfect for gentle exfoliation. Very comfortable and easy to use in the shower."
+      },
+      {
+        name: "John Smith",
+        profileImage: "https://i.pravatar.cc/100?u=john.smith",
+        rating: 5,
+        comment: "Excellent quality! The natural fibers feel great on the skin and it's very versatile."
+      },
+      {
+        name: "Lisa Brown",
+        profileImage: "https://ui-avatars.com/api/?name=Lisa+Brown&background=random&size=100",
+        rating: 4,
+        comment: "Love how soft yet effective this glove is. Great for daily use and easy to clean."
+      }
+    ],
     features: [
       "Gentle exfoliation",
       "Comfortable fit",
@@ -87,12 +127,32 @@ export const products = [
     name: "Round Body Loofah Scrubber",
     price: prices.circleLoofah,
     originalPrice: originalPrices.circleLoofah,
-    image: circleLoofah1, // Use the 1st image as main
+    image: circleLoofah1,
     images: [circleLoofah1, circleLoofah2, circleLoofah3, circleLoofah4],
     description: "Achieve thorough body exfoliation with this round loofah scrubber. Its circular shape provides excellent grip and coverage for effective scrubbing. Made from natural fibers for a gentle yet invigorating cleanse.",
     category: ["bath", "sale"],
     delivery: 12,
     reviews: 56,
+    reviewData: [
+      {
+        name: "David Wilson",
+        profileImage: "https://i.pravatar.cc/100?u=david.wilson",
+        rating: 5,
+        comment: "This round scrubber is fantastic! The grip is excellent and it provides a thorough clean."
+      },
+      {
+        name: "Anna Taylor",
+        profileImage: "https://ui-avatars.com/api/?name=Anna+Taylor&background=random&size=100",
+        rating: 4,
+        comment: "Love the invigorating cleanse this provides. Very durable and well-made."
+      },
+      {
+        name: "Robert Lee",
+        profileImage: "https://i.pravatar.cc/100?u=robert.lee",
+        rating: 5,
+        comment: "Perfect for my daily routine. The natural fibers feel great on the skin."
+      }
+    ],
     features: [
       "Natural fibers",
       "Excellent grip",
@@ -107,12 +167,32 @@ export const products = [
     name: "Natural Loofah Cover",
     price: prices.cover,
     originalPrice: originalPrices.cover,
-    image: cover1, // Use the 1st image as main
+    image: cover1,
     images: [cover1, cover2, cover3, cover4],
     description: "Protect and preserve your natural loofah with this durable cover. Made from breathable fabric, it keeps your loofah dry and hygienic between uses. Easy to clean and machine washable.",
     category: ["bath", "sale"],
     delivery: 10,
     reviews: 42,
+    reviewData: [
+      {
+        name: "Jennifer Martinez",
+        profileImage: "https://ui-avatars.com/api/?name=Jennifer+Martinez&background=random&size=100",
+        rating: 4,
+        comment: "This cover is perfect for keeping my loofah dry and clean. Very breathable and machine washable."
+      },
+      {
+        name: "Kevin Brown",
+        profileImage: "https://i.pravatar.cc/100?u=kevin.brown",
+        rating: 5,
+        comment: "Great quality cover! It really helps preserve the loofah and is very durable."
+      },
+      {
+        name: "Michelle Davis",
+        profileImage: "https://ui-avatars.com/api/?name=Michelle+Davis&background=random&size=100",
+        rating: 4,
+        comment: "Love how hygienic this cover keeps everything. Easy to use and clean."
+      }
+    ],
     features: [
       "Breathable fabric",
       "Machine washable",
@@ -127,12 +207,32 @@ export const products = [
     name: "Dish Loofah Scrubber",
     price: prices.dish,
     originalPrice: originalPrices.dish,
-    image: dish1, // Use the 1st image as main
+    image: dish1,
     images: [dish1, dish2, dish3, dish4],
     description: "Tackle tough kitchen messes with this eco-friendly dish loofah scrubber. Naturally abrasive yet gentle on surfaces, perfect for scrubbing pots, pans, and dishes without harsh chemicals.",
     category: ["kitchen", "sale"],
     delivery: 8,
     reviews: 73,
+    reviewData: [
+      {
+        name: "Thomas Anderson",
+        profileImage: "https://i.pravatar.cc/100?u=thomas.anderson",
+        rating: 5,
+        comment: "Excellent for tough kitchen messes! Eco-friendly and very effective without damaging surfaces."
+      },
+      {
+        name: "Rachel Green",
+        profileImage: "https://ui-avatars.com/api/?name=Rachel+Green&background=random&size=100",
+        rating: 4,
+        comment: "Love the natural abrasive quality. Perfect for daily dish washing."
+      },
+      {
+        name: "Mark Johnson",
+        profileImage: "https://i.pravatar.cc/100?u=mark.johnson",
+        rating: 5,
+        comment: "This scrubber is durable and chemical-free. Highly recommend for eco-conscious cleaning."
+      }
+    ],
     features: [
       "Eco-friendly material",
       "Naturally abrasive",
@@ -147,12 +247,32 @@ export const products = [
     name: "Raw Natural Loofah",
     price: prices.raw,
     originalPrice: originalPrices.raw,
-    image: raw1, // Use the 1st image as main
+    image: raw1,
     images: [raw1, raw2, raw3, raw4],
     description: "Get back to basics with this raw natural loofah. Unprocessed and pure, it provides a gentle exfoliation for your skin. Perfect for those seeking a natural, chemical-free bathing experience.",
     category: ["bath", "sale"],
     delivery: 15,
     reviews: 61,
+    reviewData: [
+      {
+        name: "Sophie Wilson",
+        profileImage: "https://ui-avatars.com/api/?name=Sophie+Wilson&background=random&size=100",
+        rating: 5,
+        comment: "Absolutely love this raw natural loofah! So pure and gentle on the skin."
+      },
+      {
+        name: "Daniel Lee",
+        profileImage: "https://i.pravatar.cc/100?u=daniel.lee",
+        rating: 4,
+        comment: "Perfect for a chemical-free bathing experience. Very natural and effective."
+      },
+      {
+        name: "Emma Taylor",
+        profileImage: "https://ui-avatars.com/api/?name=Emma+Taylor&background=random&size=100",
+        rating: 5,
+        comment: "This is exactly what I was looking for - unprocessed and pure. Great quality!"
+      }
+    ],
     features: [
       "100% natural",
       "Unprocessed",
@@ -167,12 +287,32 @@ export const products = [
     name: "Square Loofah Sponge",
     price: prices.squarLoofah,
     originalPrice: originalPrices.squarLoofah,
-    image: squareLoofah1, // Use the 1st image as main
+    image: squareLoofah1,
     images: [squareLoofah1, squareLoofah2, squareLoofah3, squareLoofah4],
     description: "Experience deep cleansing with this square loofah sponge. Its unique shape allows for better grip and coverage, making it ideal for thorough body scrubbing and massage.",
     category: ["bath", "sale"],
     delivery: 20,
     reviews: 95,
+    reviewData: [
+      {
+        name: "Chris Martinez",
+        profileImage: "https://i.pravatar.cc/100?u=chris.martinez",
+        rating: 5,
+        comment: "The square shape provides excellent grip and coverage. Perfect for deep cleansing!"
+      },
+      {
+        name: "Amanda White",
+        profileImage: "https://ui-avatars.com/api/?name=Amanda+White&background=random&size=100",
+        rating: 4,
+        comment: "Love the unique design and how well it works for massage. Very durable."
+      },
+      {
+        name: "Ryan Chen",
+        profileImage: "https://i.pravatar.cc/100?u=ryan.chen",
+        rating: 5,
+        comment: "This sponge is fantastic for thorough body scrubbing. Highly recommend!"
+      }
+    ],
     features: [
       "Unique square shape",
       "Better grip",
@@ -187,12 +327,32 @@ export const products = [
     name: "Loofah Stick Scrubber",
     price: prices.stick,
     originalPrice: originalPrices.stick,
-    image: stick1, // Use the 1st image as main
+    image: stick1,
     images: [stick1, stick2, stick3, stick4],
     description: "Reach those hard-to-get spots with this convenient loofah stick scrubber. Perfect for back scrubbing or cleaning tight spaces, combining natural exfoliation with ergonomic design.",
     category: ["bath", "sale", "new"],
     delivery: 18,
     reviews: 87,
+    reviewData: [
+      {
+        name: "Jessica Brown",
+        profileImage: "https://ui-avatars.com/api/?name=Jessica+Brown&background=random&size=100",
+        rating: 5,
+        comment: "Perfect for reaching hard-to-get spots! The ergonomic design is very convenient."
+      },
+      {
+        name: "Andrew Davis",
+        profileImage: "https://i.pravatar.cc/100?u=andrew.davis",
+        rating: 4,
+        comment: "Great for back scrubbing. Natural exfoliation feels wonderful."
+      },
+      {
+        name: "Nicole Wilson",
+        profileImage: "https://ui-avatars.com/api/?name=Nicole+Wilson&background=random&size=100",
+        rating: 5,
+        comment: "Love this stick scrubber! Versatile and very well designed."
+      }
+    ],
     features: [
       "Ergonomic design",
       "Reaches hard spots",

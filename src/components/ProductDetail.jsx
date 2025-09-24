@@ -156,14 +156,45 @@ const ProductDetail = () => {
 
           <div className="quantity-selector">
             <label>Quantity:</label>
-            <input 
-              type="number" 
-              min="1" 
-              max="10" 
+            <input
+              type="number"
+              min="1"
+              max="10"
               value={quantity}
               onChange={(e) => setQuantity(parseInt(e.target.value))}
             />
           </div>
+        </div>
+      </div>
+
+      {/* Reviews Section */}
+      <div className="product-reviews-section">
+        <h2>Customer Reviews</h2>
+        <div className="reviews-container">
+          {product.reviewData && product.reviewData.map((review, index) => (
+            <div key={index} className="review-card">
+              <div className="review-header">
+                <img
+                  src={review.profileImage}
+                  alt={review.name}
+                  className="review-profile-image"
+                />
+                <div className="review-info">
+                  <h4 className="review-name">{review.name}</h4>
+                  <div className="review-rating">
+                    {[...Array(5)].map((_, i) => (
+                      <span key={i} className={`star ${i < review.rating ? 'filled' : ''}`}>
+                        ★
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+              <div className="review-comment">
+                <p>{review.comment}</p>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
 
