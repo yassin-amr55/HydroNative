@@ -200,28 +200,6 @@
   color: var(--text-secondary);
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-  .product-detail {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
-  
-  .product-detail-container {
-    padding: 1rem;
-  }
-  
-  .main-image-container {
-    height: 300px;
-  }
-  
-  .thumbnail {
-    width: 60px;
-    height: 60px;
-  }
-}
-
-/* You might also like section styles */
 .you-might-also-like {
   margin-top: 3rem;
 }
@@ -340,6 +318,40 @@
 
 .scroll-arrow.right {
   order: 2;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .product-detail {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .product-detail-container {
+    padding: 1rem;
+  }
+  
+  .main-image-container {
+    height: 300px;
+  }
+  
+  .thumbnail {
+    width: 60px;
+    height: 60px;
+  }
+  .recommended-products-container {
+    width: calc(90% + 2rem);
+    margin: 0 -1rem;
+  }
+
+  .recommended-products {
+    margin-left: 5%;
+    border-radius: 5px;
+  }
+
+  .scroll-arrow {
+    display: none;
+  }
 }
 
 /* Reviews Section Styles */
