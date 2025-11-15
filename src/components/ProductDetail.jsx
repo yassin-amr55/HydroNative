@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
 import { products } from '../data/ProductStats.jsx';
+import { ProductStructuredData } from './StructuredData';
 import './ProductDetail.css';
 
 const ProductDetail = () => {
@@ -94,6 +95,7 @@ const ProductDetail = () => {
 
   return (
     <div className="product-detail-container">
+      <ProductStructuredData product={product} />
       <div className="product-detail">
         <div className="product-images-section">
           <div className="main-image-container">

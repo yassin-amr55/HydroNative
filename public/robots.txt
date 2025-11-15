@@ -1,0 +1,9 @@
+# Allow all search engines to crawl the site
+User-agent: *
+Allow: /
+
+# Disallow admin and private pages
+Disallow: /secretorders9274
+
+# Sitemap location
+Sitemap: https://hydronative.com/sitemap.xml
