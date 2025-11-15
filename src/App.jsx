@@ -10,6 +10,9 @@ import Products from './components/Products';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import LoadingScreen from './components/LoadingScreen';
+import PageTransitionIndicator from './components/PageTransitionIndicator';
+import ErrorBoundary from './components/ErrorBoundary';
+import NotFound from './components/NotFound';
 import ProductDetail from './components/ProductDetail';
 import BundleDetail from './components/BundleDetail';
 import PrivacyPolicy from './components/PrivacyPolicy';
@@ -36,16 +39,18 @@ function App() {
   };
 
   return (
-    <AuthProvider>
-      <OrderProvider>
-        <AllOrdersProvider>
-          <CartProvider>
-            <SearchProvider>
-              {isLoading && <LoadingScreen onLoadComplete={handleLoadComplete} />}
-              <div className="App">
-                <Header />
-                <main>
-                  <Routes>
+    <ErrorBoundary>
+      <AuthProvider>
+        <OrderProvider>
+          <AllOrdersProvider>
+            <CartProvider>
+              <SearchProvider>
+                {isLoading && <LoadingScreen onLoadComplete={handleLoadComplete} />}
+                <PageTransitionIndicator />
+                <div className="App">
+                  <Header />
+                  <main>
+                    <Routes>
                     <Route path="/" element={
                       <>
                         <FeaturedProducts />
@@ -62,6 +67,7 @@ function App() {
                     <Route path="/product/:id" element={<ProductDetail />} />
                     <Route path="/bundle/:id" element={<BundleDetail />} />
                     <Route path="/secretorders9274" element={<SecretOrders />} />
+                    <Route path="*" element={<NotFound />} />
                   </Routes>
                 </main>
                 <Footer />
@@ -70,7 +76,8 @@ function App() {
           </CartProvider>
         </AllOrdersProvider>
       </OrderProvider>
-    </AuthProvider>
+      </AuthProvider>
+    </ErrorBoundary>
   );
 }
 

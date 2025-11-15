@@ -8,6 +8,24 @@
   overflow: hidden;
 }
 
+.featured-products::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 200px;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(248, 250, 252, 0.3) 40%,
+    rgba(248, 250, 252, 0.7) 70%,
+    #f8fafc 100%
+  );
+  pointer-events: none;
+  z-index: 10;
+}
+
 .background-image {
   display: block;
   width: 100%;

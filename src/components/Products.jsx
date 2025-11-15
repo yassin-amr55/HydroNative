@@ -1,5 +1,9 @@
+import { useState, useEffect } from 'react';
 import { useCart } from '../context/CartContext';
 import { useSearch } from '../context/SearchContext';
+import LoofaBenefits from './LoofaBenefits';
+import ImageWithLoader from './ImageWithLoader';
+import ProductCardSkeleton from './ProductCardSkeleton';
 import loofahImage from '../assets/loofah.png';
 import naturalIcon from '../assets/natural.png';
 import ecoIcon from '../assets/eco-icon.png';
@@ -11,6 +15,16 @@ import './Products.css';
 const Products = () => {
   const { addToCart } = useCart();
   const { searchQuery, searchProducts, selectedCategory, setSelectedCategory } = useSearch();
+  const [isLoading, setIsLoading] = useState(true);
+
+  // Simulate initial loading
+  useEffect(() => {
+    setIsLoading(true);
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 800);
+    return () => clearTimeout(timer);
+  }, [selectedCategory]);
 
   const categories = [
     { id: 'all', name: 'All Products' },
@@ -120,13 +134,19 @@ const Products = () => {
           </div>
         )}
 
-        {filteredProducts.length > 0 ? (
+        {isLoading ? (
+          <div className={selectedCategory === 'bundles' ? "bundles-grid" : "products-grid"}>
+            {[...Array(6)].map((_, index) => (
+              <ProductCardSkeleton key={index} />
+            ))}
+          </div>
+        ) : filteredProducts.length > 0 ? (
           <div className={selectedCategory === 'bundles' ? "bundles-grid" : "products-grid"}>
             {filteredProducts.map(product => (
               selectedCategory === 'bundles' ? (
                 <div key={product.id} className="bundle-card" style={{ cursor: 'pointer' }} onClick={() => window.location.href = `/bundle/${product.id}`}>
                   <div className="bundle-image">
-                    <img src={product.image} alt={product.name} />
+                    <ImageWithLoader src={product.image} alt={product.name} />
                   </div>
                   <div className="bundle-content">
                     <h3 className="bundle-name">{product.name}</h3>
@@ -159,7 +179,7 @@ const Products = () => {
               ) : (
                 <div key={product.id} className="product-card" onClick={() => handleProductClick(product.id)} style={{ cursor: 'pointer' }}>
                   <div className="product-image">
-                    <img src={product.image} alt={product.name} />
+                    <ImageWithLoader src={product.image} alt={product.name} />
                   </div>
 
                   <div className="product-content">
@@ -202,6 +222,7 @@ const Products = () => {
           </div>
         )}
       </div>
+      <LoofaBenefits />
       <div className="loofah-section">
         <div className="loofah-container">
           <div className="loofah-text">

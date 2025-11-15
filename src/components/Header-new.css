@@ -27,6 +27,7 @@
   height: 50px;
   cursor: pointer;
 }
+
 .logo img {
   height: 100%;
   width: auto;
@@ -239,26 +240,37 @@
   border: none;
   cursor: pointer;
   padding: 8px;
-  gap: 4px;
+  gap: 5px;
+  position: relative;
+  z-index: 1001;
 }
 
 .mobile-menu-btn span {
   width: 25px;
   height: 3px;
-  background-color: var(--text-secondary);
-  transition: 0.3s;
+  background-color: var(--green);
+  border-radius: 2px;
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  transform-origin: center;
+}
+
+.mobile-menu-btn:hover span {
+  background-color: var(--green-hover);
 }
 
 .mobile-menu-btn.active span:nth-child(1) {
-  transform: rotate(-45deg) translate(-5px, 6px);
+  transform: rotate(45deg) translate(7px, 7px);
+  background-color: var(--green-hover);
 }
 
 .mobile-menu-btn.active span:nth-child(2) {
   opacity: 0;
+  transform: scale(0);
 }
 
 .mobile-menu-btn.active span:nth-child(3) {
-  transform: rotate(45deg) translate(-5px, -6px);
+  transform: rotate(-45deg) translate(7px, -7px);
+  background-color: var(--green-hover);
 }
 
 @media (max-width: 768px) {
@@ -287,12 +299,61 @@
 
   .nav-open {
     display: flex;
+    animation: slideDown 0.3s ease-out;
+  }
+
+  @keyframes slideDown {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 
   .header-btn {
     border-bottom: 1px solid var(--border-light);
     width: 100%;
     text-align: left;
+    text-shadow: 
+      0 2px 4px rgba(0, 0, 0, 0.5),
+      0 3px 8px rgba(0, 0, 0, 0.4),
+      0 1px 2px rgba(0, 0, 0, 0.6);
+    opacity: 0;
+    animation: fadeInUp 0.3s ease-out forwards;
+  }
+
+  .header-btn:nth-child(1) {
+    animation-delay: 0.1s;
+  }
+
+  .header-btn:nth-child(2) {
+    animation-delay: 0.15s;
+  }
+
+  .header-btn:nth-child(3) {
+    animation-delay: 0.2s;
+  }
+
+  .header-btn:nth-child(4) {
+    animation-delay: 0.25s;
+  }
+
+  .header-btn:nth-child(5) {
+    animation-delay: 0.3s;
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 
   .header-btn:last-child {

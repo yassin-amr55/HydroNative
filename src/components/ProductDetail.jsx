@@ -143,10 +143,13 @@ const ProductDetail = () => {
           <div className="product-description">
             <h3>Description</h3>
             <p>{product.description}</p>
+            {product.longDescription && (
+              <p className="long-description">{product.longDescription}</p>
+            )}
           </div>
 
           <div className="product-features">
-            <h3>Features</h3>
+            <h3>Key Features</h3>
             <ul>
               {product.features.map((feature, index) => (
                 <li key={index}>{feature}</li>

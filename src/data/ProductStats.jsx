@@ -49,7 +49,24 @@ export const products = [
     originalPrice: originalPrices.backBelt,
     image: backBelt3, // Use the 3rd image as main
     images: [backBelt1, backBelt2, backBelt3, backBelt4],
-    description: "Indulge in a soothing back massage with this natural loofah belt. Designed to fit comfortably around your back, it provides gentle exfoliation and massage while you shower. Perfect for relieving tension and promoting healthy skin.",
+    description: "Transform your daily shower into a spa experience with our Egyptian Back Belt Massager Loofah. This premium natural loofah belt is expertly crafted to reach every inch of your back, providing deep exfoliation and soothing massage therapy. The ergonomic design features sturdy handles for optimal grip and control, allowing you to adjust pressure and target specific areas with ease.",
+    longDescription: "Made from 100% natural Egyptian loofah fibers, this back belt combines ancient wellness traditions with modern convenience. The natural texture gently removes dead skin cells, unclogs pores, and stimulates blood circulation, leaving your skin refreshed and rejuvenated. Perfect for relieving muscle tension after a long day or preparing your skin for moisturizer absorption.",
+    benefits: [
+      "Improves blood circulation and lymphatic drainage",
+      "Reduces back acne and prevents breakouts",
+      "Relieves muscle tension and stress",
+      "Promotes smoother, healthier-looking skin",
+      "Enhances absorption of body lotions and oils",
+      "100% biodegradable and eco-friendly"
+    ],
+    careInstructions: [
+      "Rinse thoroughly after each use and squeeze out excess water",
+      "Hang in a well-ventilated area to air dry completely",
+      "Soak in warm water for 2-3 minutes before first use to soften",
+      "Replace every 3-4 weeks for optimal hygiene",
+      "Machine wash on gentle cycle or hand wash with mild soap weekly",
+      "Avoid leaving in standing water to prevent mildew"
+    ],
     category: ["bath", "sale", "new"],
     delivery: 25,
     reviews: 128,
@@ -89,7 +106,24 @@ export const products = [
     originalPrice: originalPrices.hand,
     image: hand1,
     images: [hand1, hand2, hand3, hand4],
-    description: "Achieve smooth, exfoliated skin with this comfortable loofah glove. Perfect for gentle scrubbing of hands, body, or even light kitchen use. Made from natural fibers for effective yet kind exfoliation.",
+    description: "Experience the perfect balance of convenience and effectiveness with our Natural Loofah Glove. This versatile exfoliating glove fits comfortably on your hand, giving you complete control over your cleansing routine. Whether you're scrubbing away dead skin in the shower or tackling kitchen cleanup, this multi-purpose glove delivers exceptional results.",
+    longDescription: "Crafted from premium Egyptian loofah fibers, this glove provides gentle yet thorough exfoliation that reveals softer, brighter skin. The snug fit ensures the glove stays securely in place while you work, and the natural texture creates a rich lather with minimal soap. Perfect for sensitive skin, daily body care, or eco-friendly kitchen cleaning.",
+    benefits: [
+      "Provides precise control for targeted exfoliation",
+      "Creates rich lather with less soap or cleanser",
+      "Gentle enough for daily use on all skin types",
+      "Versatile for both bath and light kitchen tasks",
+      "Improves skin texture and reduces ingrown hairs",
+      "Naturally antimicrobial and quick-drying"
+    ],
+    careInstructions: [
+      "Rinse thoroughly after each use and wring out excess water",
+      "Hang to dry in a well-ventilated area",
+      "Soak in warm water before first use to soften fibers",
+      "Hand wash with mild soap weekly or machine wash in a mesh bag",
+      "Replace every 4-6 weeks depending on usage frequency",
+      "Store in a dry place between uses"
+    ],
     category: ["kitchen", "sale", "new"],
     delivery: 5,
     reviews: 89,
@@ -129,7 +163,24 @@ export const products = [
     originalPrice: originalPrices.circleLoofah,
     image: circleLoofah1,
     images: [circleLoofah1, circleLoofah2, circleLoofah3, circleLoofah4],
-    description: "Achieve thorough body exfoliation with this round loofah scrubber. Its circular shape provides excellent grip and coverage for effective scrubbing. Made from natural fibers for a gentle yet invigorating cleanse.",
+    description: "Elevate your bathing ritual with our classic Round Body Loofah Scrubber. This timeless design has been perfected over generations, offering the ideal balance of exfoliation and comfort. The ergonomic circular shape fits perfectly in your palm, providing excellent grip even when wet, while the generous surface area ensures efficient full-body coverage.",
+    longDescription: "Sourced from the finest Egyptian loofah plants, this round scrubber features a dense, fibrous texture that creates an invigorating cleansing experience. The natural fibers work to buff away dead skin cells, unclog pores, and stimulate circulation, revealing the radiant, healthy skin beneath. Its durable construction ensures long-lasting performance, making it an essential addition to your daily wellness routine.",
+    benefits: [
+      "Promotes even skin tone and texture",
+      "Helps prevent and reduce keratosis pilaris (bumpy skin)",
+      "Prepares skin for better tanning results",
+      "Reduces the appearance of cellulite with regular use",
+      "Creates luxurious lather with minimal product",
+      "Naturally biodegradable and sustainable"
+    ],
+    careInstructions: [
+      "Rinse thoroughly after each use to remove soap residue",
+      "Squeeze out excess water and hang to dry",
+      "Soak in warm water for 3-5 minutes before first use",
+      "Sanitize weekly by soaking in diluted vinegar solution (1:3 ratio)",
+      "Replace every 3-4 weeks for best hygiene",
+      "Avoid storing in enclosed, damp spaces"
+    ],
     category: ["bath", "sale"],
     delivery: 12,
     reviews: 56,
@@ -169,7 +220,24 @@ export const products = [
     originalPrice: originalPrices.cover,
     image: cover1,
     images: [cover1, cover2, cover3, cover4],
-    description: "Protect and preserve your natural loofah with this durable cover. Made from breathable fabric, it keeps your loofah dry and hygienic between uses. Easy to clean and machine washable.",
+    description: "Extend the life of your natural loofah with our premium Protective Cover. This innovative accessory is designed to keep your loofah fresh, hygienic, and ready for use. Made from breathable, quick-drying fabric, it prevents moisture buildup while allowing proper air circulation, ensuring your loofah stays clean and mildew-free between uses.",
+    longDescription: "Our loofah cover features a smart design with a convenient drawstring closure and hanging loop for easy storage. The breathable mesh construction promotes rapid drying while protecting your loofah from bathroom contaminants. Machine washable and durable, this cover is an essential investment in maintaining the quality and longevity of your natural loofah products.",
+    benefits: [
+      "Extends loofah lifespan by up to 50%",
+      "Prevents mildew and bacterial growth",
+      "Keeps bathroom looking tidy and organized",
+      "Protects loofah from dust and contaminants",
+      "Quick-drying breathable material",
+      "Eco-friendly and reusable"
+    ],
+    careInstructions: [
+      "Machine wash with regular laundry on warm cycle",
+      "Air dry or tumble dry on low heat",
+      "Wash weekly or as needed to maintain freshness",
+      "Ensure loofah is squeezed dry before placing in cover",
+      "Replace cover every 6 months for optimal hygiene",
+      "Do not use fabric softener as it reduces breathability"
+    ],
     category: ["bath", "sale"],
     delivery: 10,
     reviews: 42,
@@ -209,7 +277,24 @@ export const products = [
     originalPrice: originalPrices.dish,
     image: dish1,
     images: [dish1, dish2, dish3, dish4],
-    description: "Tackle tough kitchen messes with this eco-friendly dish loofah scrubber. Naturally abrasive yet gentle on surfaces, perfect for scrubbing pots, pans, and dishes without harsh chemicals.",
+    description: "Make the switch to sustainable kitchen cleaning with our Natural Dish Loofah Scrubber. This eco-friendly alternative to synthetic sponges delivers powerful cleaning performance without the environmental guilt. The naturally abrasive texture cuts through grease and grime effortlessly, while remaining gentle enough for non-stick cookware and delicate dishes.",
+    longDescription: "Grown and harvested from Egyptian loofah plants, this kitchen scrubber is 100% biodegradable and compostable. Unlike plastic sponges that shed microplastics and harbor bacteria, our natural loofah is naturally antimicrobial and can be sanitized easily. It creates excellent lather with dish soap, making your cleaning routine more efficient and environmentally responsible.",
+    benefits: [
+      "100% plastic-free and biodegradable",
+      "Naturally antimicrobial properties resist odors",
+      "Tough on grease, gentle on surfaces",
+      "Safe for non-stick cookware and fine china",
+      "Lasts longer than traditional sponges",
+      "Compostable at end of life - zero waste"
+    ],
+    careInstructions: [
+      "Rinse thoroughly after each use and squeeze out water",
+      "Store in a dry dish rack or hang to air dry",
+      "Sanitize daily by microwaving damp loofah for 1 minute",
+      "Alternatively, run through dishwasher top rack weekly",
+      "Replace every 2-3 weeks for optimal hygiene",
+      "Compost old scrubbers or use in garden as plant support"
+    ],
     category: ["kitchen", "sale"],
     delivery: 8,
     reviews: 73,
@@ -249,7 +334,24 @@ export const products = [
     originalPrice: originalPrices.raw,
     image: raw1,
     images: [raw1, raw2, raw3, raw4],
-    description: "Get back to basics with this raw natural loofah. Unprocessed and pure, it provides a gentle exfoliation for your skin. Perfect for those seeking a natural, chemical-free bathing experience.",
+    description: "Experience loofah in its purest form with our Raw Natural Loofah. This unprocessed, whole loofah is exactly as nature intended - no chemicals, no treatments, just pure Egyptian loofah plant. Perfect for purists and DIY enthusiasts who want complete control over their skincare routine. Cut it to your preferred size and shape for a truly customized bathing experience.",
+    longDescription: "Harvested at peak maturity and sun-dried using traditional methods, our raw loofahs retain all their natural properties and benefits. Each loofah is unique in size and texture, offering an authentic connection to ancient Egyptian wellness traditions. Whether you use it whole for full-body exfoliation or cut it into smaller pieces for targeted care, this versatile product adapts to your needs.",
+    benefits: [
+      "Completely unprocessed and chemical-free",
+      "Customizable - cut to any size or shape you need",
+      "Most economical option - one loofah lasts months",
+      "Ideal for sensitive skin and natural living enthusiasts",
+      "Can be used for body care, crafts, or gardening",
+      "Maximum sustainability with minimal processing"
+    ],
+    careInstructions: [
+      "Soak in warm water for 5-10 minutes before first use to soften",
+      "Cut to desired size using sharp scissors or knife",
+      "Rinse thoroughly after each use and hang to dry",
+      "Boil in water for 5 minutes monthly to deep clean and sanitize",
+      "Replace pieces every 4-6 weeks depending on usage",
+      "Store unused portions in a cool, dry place"
+    ],
     category: ["bath", "sale"],
     delivery: 15,
     reviews: 61,
@@ -289,7 +391,24 @@ export const products = [
     originalPrice: originalPrices.squarLoofah,
     image: squareLoofah1,
     images: [squareLoofah1, squareLoofah2, squareLoofah3, squareLoofah4],
-    description: "Experience deep cleansing with this square loofah sponge. Its unique shape allows for better grip and coverage, making it ideal for thorough body scrubbing and massage.",
+    description: "Discover superior exfoliation with our innovative Square Loofah Sponge. The geometric design isn't just aesthetically pleasing - it's engineered for optimal performance. The flat surfaces provide maximum contact with your skin, while the defined edges allow for precise exfoliation of problem areas like elbows, knees, and heels.",
+    longDescription: "This premium square loofah combines traditional Egyptian craftsmanship with modern design thinking. The unique shape offers multiple grip options, ensuring comfort and control whether you're doing gentle daily cleansing or intensive exfoliation. The dense, uniform texture provides consistent results across your entire body, making it a favorite among skincare enthusiasts.",
+    benefits: [
+      "Flat surfaces maximize skin contact for efficient exfoliation",
+      "Corners and edges perfect for targeting rough patches",
+      "Multiple grip positions for comfortable handling",
+      "Ideal for pre-shave exfoliation and ingrown hair prevention",
+      "Excellent for massage and lymphatic drainage techniques",
+      "Professional spa-quality results at home"
+    ],
+    careInstructions: [
+      "Rinse thoroughly after use and squeeze out all water",
+      "Hang or lay flat in well-ventilated area to dry",
+      "Soak in warm water for 2-3 minutes before first use",
+      "Deep clean weekly by soaking in baking soda solution",
+      "Replace every 3-4 weeks for optimal performance",
+      "Avoid twisting or wringing to maintain shape"
+    ],
     category: ["bath", "sale"],
     delivery: 20,
     reviews: 95,
@@ -329,7 +448,24 @@ export const products = [
     originalPrice: originalPrices.stick,
     image: stick1,
     images: [stick1, stick2, stick3, stick4],
-    description: "Reach those hard-to-get spots with this convenient loofah stick scrubber. Perfect for back scrubbing or cleaning tight spaces, combining natural exfoliation with ergonomic design.",
+    description: "Say goodbye to unreachable spots with our ingenious Loofah Stick Scrubber. This extended-reach tool brings professional spa-quality exfoliation to every inch of your body. The ergonomic wooden handle provides comfortable grip and precise control, while the natural loofah head delivers thorough cleansing and massage to your back, shoulders, and other hard-to-reach areas.",
+    longDescription: "Designed for independence and convenience, this stick scrubber eliminates the need for assistance with back care. The sturdy construction ensures stability during use, while the natural loofah head can be replaced when needed (replacement heads sold separately). Perfect for those with limited mobility, athletes needing post-workout cleansing, or anyone who values thorough, all-over body care.",
+    benefits: [
+      "Reaches entire back without assistance",
+      "Reduces back acne and improves skin clarity",
+      "Ergonomic handle prevents hand and wrist strain",
+      "Ideal for elderly or those with limited mobility",
+      "Provides gentle massage to relieve muscle tension",
+      "Replaceable loofah head for long-term use"
+    ],
+    careInstructions: [
+      "Rinse loofah head thoroughly after each use",
+      "Hang by loop to air dry completely",
+      "Keep wooden handle dry to prevent warping",
+      "Soak loofah head in warm water before first use",
+      "Replace loofah head every 4-6 weeks",
+      "Treat wooden handle with mineral oil quarterly to maintain finish"
+    ],
     category: ["bath", "sale", "new"],
     delivery: 18,
     reviews: 87,
