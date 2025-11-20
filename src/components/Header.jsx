@@ -12,7 +12,7 @@ const Header = () => {
   const { searchQuery, setSearchQuery, setSelectedCategory } = useSearch();
   const { getCartItemsCount } = useCart();
   const { user, logout } = useAuth();
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [isAuthOpen, setIsAuthOpen] = useState(false);
   const [isOrdersOpen, setIsOrdersOpen] = useState(false);
@@ -67,8 +67,6 @@ const Header = () => {
   const handleSearch = (e) => {
     e.preventDefault();
     // Search is handled by the Products component through context
-    // Close mobile menu if open
-    setIsMenuOpen(false);
   };
 
   const handleAccountClick = () => {
@@ -98,13 +96,49 @@ const Header = () => {
             <div className="logo" onClick={() => window.location.href = '/'}>
                 <img src={logo} alt="HydroNative Logo" />
             </div>
-            <nav className={`nav ${isMenuOpen ? 'nav-open' : ''}`}>
+
+            <nav className="nav">
               <button className="header-btn bold" onClick={() => { setSelectedCategory('bath'); document.getElementById('products').scrollIntoView({ behavior: 'smooth' }); }}>Bath</button>
               <button className="header-btn bold" onClick={() => { setSelectedCategory('kitchen'); document.getElementById('products').scrollIntoView({ behavior: 'smooth' }); }}>Kitchen</button>
               <button className="header-btn bold" onClick={() => { setSelectedCategory('pets'); document.getElementById('products').scrollIntoView({ behavior: 'smooth' }); }}>pets</button>
               <button className="header-btn" onClick={() => { setSelectedCategory('sale'); document.getElementById('products').scrollIntoView({ behavior: 'smooth' }); }}>sale</button>
               <button className="header-btn" onClick={() => { setSelectedCategory('new'); document.getElementById('products').scrollIntoView({ behavior: 'smooth' }); }}>new&trending</button>
             </nav>
+
+            <div className="account-dropdown mobile-account">
+              <button className="action-btn" onClick={handleAccountClick}>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                  <circle cx="12" cy="7" r="4"/>
+                </svg>
+                <span>
+                  {user ? (user.displayName || user.email || 'Account').split(' ')[0] : 'Account'}
+                </span>
+              </button>
+              
+              {showAccountMenu && user && (
+                <div className="account-menu">
+                  <div className="account-info">
+                    <p className="account-name">{user.displayName}</p>
+                    <p className="account-email">{user.email}</p>
+                  </div>
+                  <button onClick={handleOrdersClick} className="menu-item">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <path d="M16 11V7a4 4 0 0 0-8 0v4M5 9h14l-1 7H6l-1-7z"/>
+                    </svg>
+                    My Orders
+                  </button>
+                  <button onClick={handleLogout} className="menu-item logout">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/>
+                      <polyline points="16,17 21,12 16,7"/>
+                      <line x1="21" y1="12" x2="9" y2="12"/>
+                    </svg>
+                    Sign Out
+                  </button>
+                </div>
+              )}
+            </div>
 
             <div className="header-right">
               <div className="search-container">
@@ -127,7 +161,7 @@ const Header = () => {
               </div>
 
               <div className="header-actions">
-                <div className="account-dropdown">
+                <div className="account-dropdown desktop-account">
                   <button className="action-btn" onClick={handleAccountClick}>
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                       <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
@@ -174,16 +208,6 @@ const Header = () => {
                 </button>
               </div>
             </div>
-
-            <button 
-              className={`mobile-menu-btn ${isMenuOpen ? 'active' : ''}`}
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              aria-label="Toggle menu"
-            >
-              <span></span>
-              <span></span>
-              <span></span>
-            </button>
           </div>
         </div>
       </header>

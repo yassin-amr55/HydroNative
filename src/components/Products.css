@@ -273,15 +273,32 @@
   }
 
   .category-filter {
-    flex-direction: column;
+    overflow-x: auto;
+    justify-content: flex-start;
     gap: 0.5rem;
+    padding: 0.5rem 0;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+  }
+
+  .category-filter::-webkit-scrollbar {
+    height: 4px;
+  }
+
+  .category-filter::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+  }
+
+  .category-filter::-webkit-scrollbar-thumb {
+    background: var(--green);
+    border-radius: 10px;
   }
 
   .filter-btn {
     padding: 8px 16px;
     font-size: 0.85rem;
-    flex: 1;
-    min-width: 0;
+    flex-shrink: 0;
     white-space: nowrap;
   }
 }
@@ -334,13 +351,15 @@
   }
 
   .category-filter {
-    flex-direction: column;
+    overflow-x: auto;
+    justify-content: flex-start;
     gap: 0.5rem;
+    padding: 0.5rem 0;
   }
 
   .filter-btn {
-    width: 100%;
-    text-align: center;
+    flex-shrink: 0;
+    white-space: nowrap;
   }
 }
 

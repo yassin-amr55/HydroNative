@@ -233,47 +233,57 @@
   font-weight: 600;
 }
 
-.mobile-menu-btn {
+/* Hide mobile account button on desktop */
+.mobile-account {
   display: none;
-  flex-direction: column;
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 8px;
-  gap: 5px;
-  position: relative;
-  z-index: 1001;
 }
 
-.mobile-menu-btn span {
-  width: 25px;
-  height: 3px;
-  background-color: var(--green);
-  border-radius: 2px;
-  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-  transform-origin: center;
+/* Show desktop account button on desktop */
+.desktop-account {
+  display: block;
 }
 
-.mobile-menu-btn:hover span {
-  background-color: var(--green-hover);
-}
+/* Medium screens (769px to 1199px) - Hide nav, expand search */
+@media (max-width: 1199px) and (min-width: 769px) {
+  /* Hide nav menu on medium screens */
+  .nav {
+    display: none !important;
+  }
 
-.mobile-menu-btn.active span:nth-child(1) {
-  transform: rotate(45deg) translate(7px, 7px);
-  background-color: var(--green-hover);
-}
+  /* Make header-right take all available space between logo and actions */
+  .header-right {
+    flex: 1;
+    order: 2;
+  }
 
-.mobile-menu-btn.active span:nth-child(2) {
-  opacity: 0;
-  transform: scale(0);
-}
+  /* Expand search container to fill the space */
+  .search-container {
+    flex: 1;
+    max-width: none;
+    width: 100%;
+  }
 
-.mobile-menu-btn.active span:nth-child(3) {
-  transform: rotate(-45deg) translate(7px, -7px);
-  background-color: var(--green-hover);
+  .search-form {
+    width: 100%;
+  }
+
+  /* Keep header-actions on the right */
+  .header-actions {
+    order: 3;
+    flex-shrink: 0;
+  }
 }
 
 @media (max-width: 768px) {
+  /* Show mobile account button on mobile */
+  .mobile-account {
+    display: block;
+  }
+
+  /* Hide desktop account button on mobile */
+  .desktop-account {
+    display: none !important;
+  }
   .header-content {
     flex-wrap: wrap;
     gap: 1rem;
@@ -283,107 +293,71 @@
     font-size: 1.5rem;
   }
 
+  /* Hide nav menu on mobile */
   .nav {
-    display: none;
-    width: 100%;
-    flex-direction: column;
-    padding: 1rem 0;
-    border-top: 1px solid var(--border-light);
-    background: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    z-index: 1000;
+    display: none !important;
   }
 
-  .header.active .nav {
-    background-color: var(--bg-primary);
-  }
-
-  .nav-open {
+  /* Restructure header layout for mobile */
+  .header-content {
     display: flex;
-    animation: slideDown 0.3s ease-out;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
   }
 
-  @keyframes slideDown {
-    from {
-      opacity: 0;
-      transform: translateY(-10px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+  /* Logo in top left */
+  .logo {
+    order: 1;
   }
 
-  .header-btn {
-    border-bottom: 1px solid var(--border-light);
-    width: 100%;
-    text-align: left;
-    text-shadow: 
-      0 2px 4px rgba(0, 0, 0, 0.5),
-      0 3px 8px rgba(0, 0, 0, 0.4),
-      0 1px 2px rgba(0, 0, 0, 0.6);
-    opacity: 0;
-    animation: fadeInUp 0.3s ease-out forwards;
+  /* Mobile account button and cart button grouped on the right */
+  .mobile-account {
+    order: 2;
+    margin-left: auto;
   }
 
-  .header-btn:nth-child(1) {
-    animation-delay: 0.1s;
-  }
-
-  .header-btn:nth-child(2) {
-    animation-delay: 0.15s;
-  }
-
-  .header-btn:nth-child(3) {
-    animation-delay: 0.2s;
-  }
-
-  .header-btn:nth-child(4) {
-    animation-delay: 0.25s;
-  }
-
-  .header-btn:nth-child(5) {
-    animation-delay: 0.3s;
-  }
-
-  @keyframes fadeInUp {
-    from {
-      opacity: 0;
-      transform: translateY(-10px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  .header-btn:last-child {
-    border-bottom: none;
-  }
-
-  .header-right {
+  .cart-btn {
     order: 3;
+  }
+
+  /* Search bar spans full width on second row */
+  .header-right {
+    order: 4;
     width: 100%;
+    flex-basis: 100%;
   }
 
   .search-container {
     width: 100%;
     max-width: none;
+    flex: 1;
+  }
+
+  .search-form {
+    width: 100%;
   }
 
   .search-input {
     padding: 14px 50px 14px 16px;
     font-size: 16px;
+    width: 100%;
   }
 
   .header-actions {
     gap: 0.5rem;
+    width: auto;
   }
 
-  .action-btn span {
+  /* Show username text on mobile for mobile-account button */
+  .mobile-account .action-btn span {
+    display: inline;
+  }
+
+  /* Hide username text on mobile for desktop-account button (in header-actions) */
+  .header-actions .action-btn span {
     display: none;
   }
 
@@ -393,16 +367,14 @@
     min-height: 48px;
   }
 
-  .account-menu {
-    right: -70px;
+  /* Adjust mobile account button to show text */
+  .mobile-account .action-btn {
+    padding: 10px 16px;
+    min-width: auto;
   }
 
-  .mobile-menu-btn {
-    display: flex;
-    min-width: 48px;
-    min-height: 48px;
-    align-items: center;
-    justify-content: center;
+  .account-menu {
+    right: 0;
   }
 }
 
@@ -421,5 +393,27 @@
 
   .action-btn {
     padding: 10px;
+  }
+}
+
+/* Very small screens (under 320px) - Hide username to save space */
+@media (max-width: 319px) {
+  /* Hide username text on very small screens */
+  .mobile-account .action-btn span {
+    display: none !important;
+  }
+
+  /* Reset button padding to icon-only size */
+  .mobile-account .action-btn {
+    padding: 12px;
+    min-width: 48px;
+  }
+
+  .logo {
+    height: 40px;
+  }
+
+  .header-content {
+    gap: 0.5rem;
   }
 }
