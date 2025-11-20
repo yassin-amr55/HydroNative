@@ -297,6 +297,10 @@
     z-index: 1000;
   }
 
+  .header.active .nav {
+    background-color: var(--bg-primary);
+  }
+
   .nav-open {
     display: flex;
     animation: slideDown 0.3s ease-out;
