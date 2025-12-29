@@ -1,4 +1,5 @@
 import { createContext, useContext, useReducer, useEffect } from 'react';
+import { fbPixel } from '../utils/fbPixel';
 
 const CartContext = createContext();
 
@@ -79,6 +80,9 @@ export const CartProvider = ({ children }) => {
 
   const addToCart = (product, quantity = 1) => {
     dispatch({ type: 'ADD_TO_CART', payload: { product, quantity } });
+    
+    // Track Facebook Pixel event
+    fbPixel.trackAddToCart(product, quantity);
   };
 
   const removeFromCart = (productId) => {

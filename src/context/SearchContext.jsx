@@ -1,4 +1,5 @@
 import React, { createContext, useContext, useState } from 'react';
+import { fbPixel } from '../utils/fbPixel';
 
 const SearchContext = createContext();
 
@@ -11,6 +12,9 @@ export const SearchProvider = ({ children }) => {
     if (!query.trim()) {
       return products;
     }
+
+    // Track Facebook Pixel - Search
+    fbPixel.trackSearch(query);
 
     const lowercaseQuery = query.toLowerCase();
     return products.filter(product =>

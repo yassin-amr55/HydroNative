@@ -3,6 +3,7 @@ import { useParams, Link } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
 import { products } from '../data/ProductStats.jsx';
 import { ProductStructuredData } from './StructuredData';
+import { fbPixel } from '../utils/fbPixel';
 import './ProductDetail.css';
 
 const ProductDetail = () => {
@@ -19,6 +20,8 @@ const ProductDetail = () => {
     const foundProduct = products.find(p => p.id === parseInt(id));
     if (foundProduct) {
       setProduct(foundProduct);
+      // Track Facebook Pixel - View Content
+      fbPixel.trackViewContent(foundProduct);
     }
   }, [id]);
 

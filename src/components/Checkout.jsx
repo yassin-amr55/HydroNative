@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useCart } from '../context/CartContext';
 import { useAuth } from '../context/AuthContext';
 import { useOrders } from '../context/OrderContext';
+import { fbPixel } from '../utils/fbPixel';
 import './Checkout.css';
 
 const Checkout = ({ isOpen, onClose }) => {
@@ -52,6 +53,9 @@ const Checkout = ({ isOpen, onClose }) => {
       const delivery = subtotal >= 24 ? 0 : 2.99;
       const total = subtotal + delivery;
 
+      // Track Facebook Pixel - Initiate Checkout
+      fbPixel.trackInitiateCheckout(items, total);
+
       const orderData = {
         userId: user?.uid || 'guest',
         items: items,
@@ -72,6 +76,9 @@ const Checkout = ({ isOpen, onClose }) => {
       };
 
       const order = await createOrder(orderData);
+
+      // Track Facebook Pixel - Purchase
+      fbPixel.trackPurchase(orderData);
 
       // Send order info to your email via Netlify Function
       await fetch('/.netlify/functions/send-order-email', {

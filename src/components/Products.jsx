@@ -10,6 +10,7 @@ import ecoIcon from '../assets/eco-icon.png';
 import bioIcon from '../assets/bio-icon.png';
 import { products } from '../data/ProductStats.jsx';
 import { bundles } from '../data/BundleStats.jsx';
+import { fbPixel } from '../utils/fbPixel';
 import './Products.css';
 
 const Products = () => {
@@ -121,7 +122,13 @@ const Products = () => {
             <button
               key={category.id}
               className={`filter-btn ${selectedCategory === category.id ? 'active' : ''}`}
-              onClick={() => setSelectedCategory(category.id)}
+              onClick={() => {
+                setSelectedCategory(category.id);
+                // Track Facebook Pixel - View Category
+                if (category.id !== 'all') {
+                  fbPixel.trackViewCategory(category.name);
+                }
+              }}
             >
               {category.name}
             </button>

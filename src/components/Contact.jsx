@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useForm, ValidationError } from '@formspree/react';
+import { fbPixel } from '../utils/fbPixel';
 import './Contact.css';
 
 const Contact = () => {
@@ -18,6 +19,8 @@ const Contact = () => {
     } else if (state.succeeded) {
       setStatus('Thanks for contacting us!');
       setFormData({ name: '', email: '', message: '' });
+      // Track Facebook Pixel - Contact
+      fbPixel.trackContact();
       setTimeout(() => setStatus(''), 3000);
     } else if (state.errors && state.errors.length > 0) {
       setStatus('❌ Failed to send. Please try again.');
