@@ -25,11 +25,9 @@ const SecretOrders = () => {
     // Check if user is logged in and is an admin
     if (user && ADMIN_EMAILS.includes(user.email)) {
       setIsAuthorized(true);
-    } else if (user) {
-      // User is logged in but not an admin
-      navigate('/');
     }
-  }, [user, navigate]);
+    // Don't redirect non-admin users, let them see the password prompt
+  }, [user]);
 
   const handlePasswordSubmit = (e) => {
     e.preventDefault();
