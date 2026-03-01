@@ -1,13 +1,87 @@
 import { useAllOrders } from '../context/AllOrdersContext';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { db } from '../firebase';
 import { doc, updateDoc } from 'firebase/firestore';
+import { useAuth } from '../context/AuthContext';
+import { useNavigate } from 'react-router-dom';
 import './Orders.css';
 
 const SecretOrders = () => {
   const { allOrders, error, refreshOrders } = useAllOrders();
+  const { user } = useAuth();
+  const navigate = useNavigate();
   const [updatingOrderId, setUpdatingOrderId] = useState(null);
   const [updateError, setUpdateError] = useState(null);
+  const [isAuthorized, setIsAuthorized] = useState(false);
+  const [password, setPassword] = useState('');
+  const [authError, setAuthError] = useState('');
+
+  // Admin email - you should change this to your actual admin email
+  const ADMIN_EMAILS = import.meta.env.VITE_ADMIN_EMAILS 
+    ? import.meta.env.VITE_ADMIN_EMAILS.split(',') 
+    : ['admin@hydronative.com'];
+
+  useEffect(() => {
+    // Check if user is logged in and is an admin
+    if (user && ADMIN_EMAILS.includes(user.email)) {
+      setIsAuthorized(true);
+    } else if (user) {
+      // User is logged in but not an admin
+      navigate('/');
+    }
+  }, [user, navigate]);
+
+  const handlePasswordSubmit = (e) => {
+    e.preventDefault();
+    const ADMIN_PASSWORD = import.meta.env.VITE_ADMIN_PASSWORD || 'HydroAdmin2024!';
+    
+    if (password === ADMIN_PASSWORD) {
+      setIsAuthorized(true);
+      setAuthError('');
+    } else {
+      setAuthError('Incorrect password');
+    }
+  };
+
+  // If not authorized, show password prompt
+  if (!isAuthorized) {
+    return (
+      <div className="container">
+        <div className="auth-overlay" style={{ position: 'relative', background: 'transparent' }}>
+          <div className="auth-modal" style={{ marginTop: '100px' }}>
+            <div className="auth-header">
+              <h2>Admin Access Required</h2>
+            </div>
+            <div className="auth-content">
+              <form onSubmit={handlePasswordSubmit}>
+                <div className="form-group">
+                  <label>Admin Password</label>
+                  <input
+                    type="password"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    placeholder="Enter admin password"
+                    required
+                  />
+                </div>
+                {authError && <div className="error-message">{authError}</div>}
+                <button type="submit" className="btn auth-btn">
+                  Access Admin Panel
+                </button>
+              </form>
+              <div className="auth-switch">
+                <p>
+                  <button type="button" onClick={() => navigate('/')} className="switch-btn">
+                    Back to Home
+                  </button>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   const getStatusColor = (status) => {
     switch (status) {
