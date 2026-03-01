@@ -1,0 +1,419 @@
+@import url('../styles/colors.css');
+
+.header {
+  background-color: none;
+  border-bottom: none;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+.header.active{
+  border-bottom: 1px solid var(--border-light);
+  background-color: var(--bg-primary);
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 0;
+  gap: 1rem;
+}
+
+.logo {
+  height: 50px;
+  cursor: pointer;
+}
+
+.logo img {
+  height: 100%;
+  width: auto;
+}
+
+.nav {
+  display: flex;
+  gap: 1rem;
+  flex: 1;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.header-btn {
+  background: none;
+  border: none;
+  color: var(--green);
+  font-size: 1.3rem;
+  font-weight: normal;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 4px;
+}
+
+.header-btn.bold {
+  font-weight: bold;
+}
+
+.header-btn:hover {
+  color: var(--green-hover);
+}
+
+.search-container {
+  flex: 1;
+  max-width: 400px;
+}
+
+.search-form {
+  width: 200px;
+  display: flex;
+  position: relative;
+}
+
+.search-input {
+  width: 100%;
+  padding: 12px 50px 12px 16px;
+  border-radius: 8px;
+  border: none;
+  font-size: 1rem;
+  background-color: rgba(255, 255, 255, 0.534);
+  color: var(--text-primary);
+  transition: border-color 0.3s ease;
+}
+
+.search-input.active {
+  border: 1px solid var(--border-light);
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: var(--green);
+}
+
+.search-btn {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 4px;
+  transition: color 0.3s ease;
+}
+
+.search-btn:hover {
+  color: var(--green);
+}
+
+.header-actions {
+  display: flex;
+  gap: 1rem;
+}
+
+.action-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 10px 16px;
+  background: none;
+  border: none;
+  border-radius: 8px;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.account-dropdown {
+  position: relative;
+}
+
+.account-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: var(--bg-primary);
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  box-shadow: 0 10px 25px var(--shadow-light);
+  min-width: 200px;
+  z-index: 1000;
+  animation: slideDown 0.2s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.account-info {
+  padding: 1rem;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.account-name {
+  margin: 0 0 0.25rem 0;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.account-email {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background: none;
+  border: none;
+  text-align: left;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.menu-item:hover {
+  background-color: var(--bg-secondary);
+}
+
+.menu-item.logout {
+  color: #dc2626;
+  border-top: 1px solid var(--border-light);
+}
+
+.menu-item.logout:hover {
+  background-color: #fef2f2;
+}
+
+.action-btn:hover {
+  border-color: var(--green);
+  color: var(--green);
+}
+
+.cart-btn {
+  position: relative;
+}
+
+.cart-count {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background-color: var(--green);
+  color: var(--text-white);
+  font-size: 0.75rem;
+  padding: 2px 6px;
+  border-radius: 50%;
+  min-width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+}
+
+/* Hide mobile account button on desktop */
+.mobile-account {
+  display: none;
+}
+
+/* Show desktop account button on desktop */
+.desktop-account {
+  display: block;
+}
+
+/* Medium screens (769px to 1199px) - Hide nav, expand search */
+@media (max-width: 1199px) and (min-width: 769px) {
+  /* Hide nav menu on medium screens */
+  .nav {
+    display: none !important;
+  }
+
+  /* Make header-right take all available space between logo and actions */
+  .header-right {
+    flex: 1;
+    order: 2;
+  }
+
+  /* Expand search container to fill the space */
+  .search-container {
+    flex: 1;
+    max-width: none;
+    width: 100%;
+  }
+
+  .search-form {
+    width: 100%;
+  }
+
+  /* Keep header-actions on the right */
+  .header-actions {
+    order: 3;
+    flex-shrink: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Show mobile account button on mobile */
+  .mobile-account {
+    display: block;
+  }
+
+  /* Hide desktop account button on mobile */
+  .desktop-account {
+    display: none !important;
+  }
+  .header-content {
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .logo h1 {
+    font-size: 1.5rem;
+  }
+
+  /* Hide nav menu on mobile */
+  .nav {
+    display: none !important;
+  }
+
+  /* Restructure header layout for mobile */
+  .header-content {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+  }
+
+  /* Logo in top left */
+  .logo {
+    order: 1;
+  }
+
+  /* Mobile account button and cart button grouped on the right */
+  .mobile-account {
+    order: 2;
+    margin-left: auto;
+  }
+
+  .cart-btn {
+    order: 3;
+  }
+
+  /* Search bar spans full width on second row */
+  .header-right {
+    order: 4;
+    width: 100%;
+    flex-basis: 100%;
+  }
+
+  .search-container {
+    width: 100%;
+    max-width: none;
+    flex: 1;
+  }
+
+  .search-form {
+    width: 100%;
+  }
+
+  .search-input {
+    padding: 14px 50px 14px 16px;
+    font-size: 16px;
+    width: 100%;
+  }
+
+  .header-actions {
+    gap: 0.5rem;
+    width: auto;
+  }
+
+  /* Show username text on mobile for mobile-account button */
+  .mobile-account .action-btn span {
+    display: inline;
+  }
+
+  /* Hide username text on mobile for desktop-account button (in header-actions) */
+  .header-actions .action-btn span {
+    display: none;
+  }
+
+  .action-btn {
+    padding: 12px;
+    min-width: 48px;
+    min-height: 48px;
+  }
+
+  /* Adjust mobile account button to show text */
+  .mobile-account .action-btn {
+    padding: 10px 16px;
+    min-width: auto;
+  }
+
+  .account-menu {
+    right: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-content {
+    padding: 0.75rem 0;
+  }
+
+  .logo h1 {
+    font-size: 1.3rem;
+  }
+
+  .header-actions {
+    gap: 0.25rem;
+  }
+
+  .action-btn {
+    padding: 10px;
+  }
+}
+
+/* Very small screens (under 320px) - Hide username to save space */
+@media (max-width: 319px) {
+  /* Hide username text on very small screens */
+  .mobile-account .action-btn span {
+    display: none !important;
+  }
+
+  /* Reset button padding to icon-only size */
+  .mobile-account .action-btn {
+    padding: 12px;
+    min-width: 48px;
+  }
+
+  .logo {
+    height: 40px;
+  }
+
+  .header-content {
+    gap: 0.5rem;
+  }
+}
