@@ -23,7 +23,7 @@ const Products = () => {
     setIsLoading(true);
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 800);
+    }, 0);
     return () => clearTimeout(timer);
   }, [selectedCategory]);
 
